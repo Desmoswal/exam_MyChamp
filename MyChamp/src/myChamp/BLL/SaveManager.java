@@ -20,12 +20,14 @@ import java.util.List;
  */
 public class SaveManager
 {
+    private FileManager fileManager = new TextFileHandler();
     
     public void saveTeams(List<Team> teamList)
     {
         fileManager.saveTeams(teamList);
     }
     
+    public List<Team> getTeams()
     {
         return fileManager.getTeams();
     }
