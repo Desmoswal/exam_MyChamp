@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.AddTeamController">
    <children>
-      <TableView layoutX="327.0" layoutY="32.0" prefHeight="523.0" prefWidth="253.0" style="-fx-background-color: grey;">
+      <TableView fx:id="addTeamTable" layoutX="327.0" layoutY="32.0" prefHeight="523.0" prefWidth="253.0" style="-fx-background-color: grey;">
         <columns>
-          <TableColumn prefWidth="232.0" text="Teams" />
+          <TableColumn fx:id="addTeamColTeams" prefWidth="232.0" text="Teams" />
           <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
         </columns>
       </TableView>
-      <TextField layoutX="30.0" layoutY="232.0" prefHeight="45.0" prefWidth="283.0" promptText="Name..." style="-fx-background-color: grey;">
+      <TextField fx:id="addTeamName" layoutX="30.0" layoutY="232.0" prefHeight="45.0" prefWidth="283.0" promptText="Name..." style="-fx-background-color: grey;">
          <font>
             <Font size="24.0" />
          </font>
@@ -25,7 +26,7 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="117.0" layoutY="314.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-color: green;" text="Add&gt;&gt;" textFill="#0fff07">
+      <Button fx:id="addTeamButton" layoutX="117.0" layoutY="314.0" mnemonicParsing="false" onAction="#pressedAddButton" style="-fx-background-color: none; -fx-border-color: green;" text="Add&gt;&gt;" textFill="#0fff07">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>

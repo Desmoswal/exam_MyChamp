@@ -5,11 +5,37 @@
  */
 package myChamp.BE;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author Desmoswal
+ * @author Kristof
  */
-public class Teams
-{
+public class Teams {
     
+    private ArrayList<Team> teams = new ArrayList<>();
+    private static Teams self;
+    
+    private Teams() {
+        
+    }
+    
+    public static Teams getInstance() {
+        if(self == null) {
+            self = new Teams();
+        }
+        return self;
+    }
+
+    public ArrayList<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(ArrayList<Team> teams) {
+        this.teams = teams;
+    }
+
+    public void addTeam(Team team) {
+        this.teams.add(team);
+    }
 }
