@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import myChamp.BE.Team;
 import myChamp.BE.Teams;
-import myChamp.BLL.SaveManager;
+import myChamp.GUI.Model.MyChampModel;
 
 /**
  * FXML Controller class
@@ -38,10 +38,9 @@ public class AddTeamController implements Initializable {
     @FXML
     private TableColumn<Team, String> addTeamColTeams;
     
-    private Teams allTeams = Teams.getInstance();
+    private MyChampModel model = new MyChampModel();
+    //private Teams allTeams = Teams.getInstance();
     //private ObservableList<Team> teams = FXCollections.observableArrayList(allTeams.getTeams());
-    
-    SaveManager manager = new SaveManager();
     private ObservableList<Team> teamList;
 
     /**
@@ -50,19 +49,19 @@ public class AddTeamController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         addTeamColTeams.setCellValueFactory(new PropertyValueFactory("name"));
-        addTeamTable.setItems(FXCollections.observableArrayList(manager.getTeams()));
+        addTeamTable.setItems(FXCollections.observableArrayList(model.getTeamsFromFile()));
     }
     
     @FXML
     private void pressedAddButton(ActionEvent event) {
-        allTeams.addTeam(new Team(addTeamName.getText()));
+        model.addNewTeam(addTeamName.getText());
         System.out.println("Added?");
-        System.out.println(allTeams.getTeams().toString());
+        System.out.println(model.getTeams().toString());
         
-        addTeamTable.setItems(FXCollections.observableArrayList(allTeams.getTeams()));
+        addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
         
         
-        teamList = FXCollections.observableArrayList(allTeams.getTeams());
-        manager.saveTeams(teamList);
+        teamList = FXCollections.observableArrayList(model.getTeams());
+        model.saveTeams(teamList);
     }
 }

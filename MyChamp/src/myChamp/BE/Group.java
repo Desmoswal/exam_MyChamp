@@ -20,12 +20,12 @@ public class Group
 
     public Group(char name, UUID uuid) {
         this.name = name;
-        
-        if(uuid != null) {
-            this.uuid = uuid;
-        } else {
-            this.uuid = UUID.randomUUID();
-        }
+        this.uuid = uuid;
+    }
+    
+    public Group(char name) {
+        this.name = name;
+        this.uuid = UUID.randomUUID();
     }
 
     public void setTeams(ArrayList<Team> teams) {
