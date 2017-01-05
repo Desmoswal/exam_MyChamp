@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import myChamp.BE.Team;
 import myChamp.BE.Teams;
+import myChamp.BLL.SaveManager;
 
 /**
  * FXML Controller class
@@ -40,7 +41,8 @@ public class AddTeamController implements Initializable {
     private Teams allTeams = Teams.getInstance();
     //private ObservableList<Team> teams = FXCollections.observableArrayList(allTeams.getTeams());
     
-    
+    SaveManager manager = new SaveManager();
+    private ObservableList<Team> teamList;
 
     /**
      * Initializes the controller class.
@@ -48,6 +50,7 @@ public class AddTeamController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         addTeamColTeams.setCellValueFactory(new PropertyValueFactory("name"));
+        addTeamTable.setItems(FXCollections.observableArrayList(manager.getTeams()));
     }
     
     @FXML
@@ -57,5 +60,9 @@ public class AddTeamController implements Initializable {
         System.out.println(allTeams.getTeams().toString());
         
         addTeamTable.setItems(FXCollections.observableArrayList(allTeams.getTeams()));
+        
+        
+        teamList = FXCollections.observableArrayList(allTeams.getTeams());
+        manager.saveTeams(teamList);
     }
 }

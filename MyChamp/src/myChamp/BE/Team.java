@@ -16,15 +16,20 @@ public class Team
 {
     private String name;
     private int score;
-    private Group group;
+    private String group;
     private int goals;
     private int matchesPlayed;
     private ArrayList<Team> playedTeams;
     private boolean isHome;
     private final UUID uuid;
 
-    public Team(String name, UUID uuid) {
+    public Team(String name, int score, String group, int goals, int matchesPlayed, /*ArrayList<Team> playedTeams,*/ UUID uuid) {
         this.name = name;
+        this.score = score;
+        this.group = group;
+        this.goals = goals;
+        this.matchesPlayed = matchesPlayed;
+        //this.playedTeams = playedTeams;
         this.uuid = uuid;
     }
     
@@ -41,7 +46,7 @@ public class Team
         this.score = score;
     }
 
-    public void setGroup(Group group) {
+    public void setGroup(String group) {
         this.group = group;
     }
 
@@ -65,7 +70,7 @@ public class Team
         return score;
     }
 
-    public Group getGroup() {
+    public String getGroup() {
         return group;
     }
 
@@ -83,5 +88,10 @@ public class Team
 
     public boolean isIsHome() {
         return isHome;
+    }
+    
+    public UUID getUUID()
+    {
+        return uuid;
     }
 }
