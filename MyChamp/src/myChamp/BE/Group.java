@@ -15,15 +15,15 @@ import java.util.UUID;
 public class Group
 {
     private ArrayList<Team> teams;
-    private char name;
+    private String name;
     private final UUID uuid;
 
-    public Group(char name, UUID uuid) {
+    public Group(String name, UUID uuid) {
         this.name = name;
         this.uuid = uuid;
     }
     
-    public Group(char name) {
+    public Group(String name) {
         this.name = name;
         this.uuid = UUID.randomUUID();
     }
@@ -36,7 +36,7 @@ public class Group
         return teams;
     }
 
-    public char getName() {
+    public String getName() {
         return name;
     }
 

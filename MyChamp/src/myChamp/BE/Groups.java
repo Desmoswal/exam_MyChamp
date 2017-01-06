@@ -17,7 +17,10 @@ public class Groups {
     private static Groups self;
 
     private Groups() {
-        
+        String[] groupNames = {"a","b","c","d"};
+        for(int i =0;i<4;i++) {
+            this.addGroup(new Group(groupNames[i]));
+        }
     }
     
     public static Groups getInstance() {

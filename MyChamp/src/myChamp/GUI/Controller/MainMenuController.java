@@ -16,6 +16,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import myChamp.BE.Groups;
+import myChamp.BE.Teams;
 
 /**
  * FXML Controller class
@@ -48,7 +50,8 @@ public class MainMenuController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        
+        Groups.getInstance();
+        Teams.getInstance();
     }    
     
     @FXML

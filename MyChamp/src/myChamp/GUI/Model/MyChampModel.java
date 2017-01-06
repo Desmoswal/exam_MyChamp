@@ -8,6 +8,7 @@ package myChamp.GUI.Model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import myChamp.BE.Group;
 import myChamp.BE.Groups;
 import myChamp.BE.Team;
 import myChamp.BLL.Manager;
@@ -38,11 +39,14 @@ public class MyChampModel
         return saveManager.getTeams();
     }
     
-    public void saveGroups(List<Groups> groupList) {
+    public void saveGroups(List<Group> groupList) {
         saveManager.saveGroups(groupList);
     }
     
-    public List<Groups> getGroups() {
+    public List<Group> getGroups() {
+        return manager.getGroups();
+    }
+    public List<Group> getGroupsFromFile() {
         return saveManager.getGroups();
     }
     

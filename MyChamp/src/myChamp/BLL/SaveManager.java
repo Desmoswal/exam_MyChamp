@@ -32,12 +32,12 @@ public class SaveManager
         return fileManager.getTeams();
     }
     
-    public void saveGroups(List<Groups> groupList)
+    public void saveGroups(List<Group> groupList)
     {
         fileManager.saveGroups(groupList);
     }
     
-    public List<Groups> getGroups()
+    public List<Group> getGroups()
     {
         return fileManager.getGroups();
     }

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.canvas.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.GroupViewController">
     <children>
@@ -34,9 +30,9 @@
       </Label>
       <TableView layoutX="66.0" layoutY="86.0" prefHeight="393.0" prefWidth="340.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
         <columns>
-          <TableColumn prefWidth="126.0" text="Home Team" />
-          <TableColumn prefWidth="126.0" text="Guest Team" />
-            <TableColumn text="Date" />
+          <TableColumn fx:id="colGroupAHomeTeam" prefWidth="126.0" text="Home Team" />
+          <TableColumn fx:id="colGroupAGuestTeam" prefWidth="126.0" text="Guest Team" />
+            <TableColumn fx:id="colGroupADate" text="Date" />
         </columns>
       </TableView>
       <Button layoutX="35.0" layoutY="516.0" mnemonicParsing="false" style="-fx-background-color: none;" stylesheets="@../../../tableView.css" text="Edit Schedule" textFill="#48ff00">
@@ -46,23 +42,23 @@
       </Button>
       <TableView layoutX="352.0" layoutY="86.0" prefHeight="393.0" prefWidth="340.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="357.0">
          <columns>
-            <TableColumn prefWidth="126.0" text="Home Team" />
-            <TableColumn prefWidth="126.0" text="Guest Team" />
-            <TableColumn text="Date" />
+            <TableColumn fx:id="colGroupBHomeTeam" prefWidth="126.0" text="Home Team" />
+            <TableColumn fx:id="colGroupBGuestTeam" prefWidth="126.0" text="Guest Team" />
+            <TableColumn fx:id="colGroupBDate" text="Date" />
          </columns>
       </TableView>
       <TableView layoutX="692.0" layoutY="86.0" prefHeight="393.0" prefWidth="340.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="357.0">
          <columns>
-            <TableColumn prefWidth="126.0" text="Home Team" />
-            <TableColumn prefWidth="126.0" text="Guest Team" />
-            <TableColumn text="Date" />
+            <TableColumn fx:id="colGroupCHomeTeam" prefWidth="126.0" text="Home Team" />
+            <TableColumn fx:id="colGroupCGuestTeam" prefWidth="126.0" text="Guest Team" />
+            <TableColumn fx:id="colGroupCDate" text="Date" />
          </columns>
       </TableView>
       <TableView layoutX="964.0" layoutY="86.0" prefHeight="393.0" prefWidth="340.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
          <columns>
-            <TableColumn prefWidth="126.0" text="Home Team" />
-            <TableColumn prefWidth="126.0" text="Guest Team" />
-            <TableColumn text="Date" />
+            <TableColumn fx:id="colGroupDHomeTeam" prefWidth="126.0" text="Home Team" />
+            <TableColumn fx:id="colGroupDGuestTeam" prefWidth="126.0" text="Guest Team" />
+            <TableColumn fx:id="colGroupDDate" text="Date" />
          </columns>
       </TableView>
     </children>

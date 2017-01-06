@@ -6,6 +6,9 @@
 package myChamp.BLL;
 
 import java.util.ArrayList;
+import java.util.List;
+import myChamp.BE.Group;
+import myChamp.BE.Groups;
 import myChamp.BE.Team;
 import myChamp.BE.Teams;
 
@@ -15,6 +18,7 @@ import myChamp.BE.Teams;
  */
 public class Manager {
     private final Teams teams = Teams.getInstance();
+    private final Groups groups = Groups.getInstance();
     
     public void addNewTeam(String name) {
         teams.addTeam(new Team(name));
@@ -26,5 +30,9 @@ public class Manager {
     
     public void removeTeam(Team team) {
         teams.getTeams().remove(team);
+    }
+    
+    public List<Group> getGroups() {
+        return groups.getGroups();
     }
 }

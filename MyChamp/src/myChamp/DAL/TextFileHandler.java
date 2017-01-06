@@ -86,10 +86,10 @@ public class TextFileHandler extends FileManager
      * @param groupList 
      */
     @Override
-    public void saveGroups(List<Groups> groupList)
+    public void saveGroups(List<Group> groupList)
     {
         String csvString = "";
-        for (Groups groups : groupList)
+        for (Group group : groupList)
         {
            /* 
             csvString += playlist.getName();
@@ -115,11 +115,10 @@ public class TextFileHandler extends FileManager
      * Reads every Group from GroupList.txt
      * @return 
      */
-    @Override
-    public List<Groups> getGroups()
+    public List<Group> getGroups()
     {
         Groups group = Groups.getInstance();
-        List<Groups> groupList = new ArrayList<>();
+        List<Group> groupList = new ArrayList<>();
         
         try(BufferedReader br = new BufferedReader(new FileReader("GroupList.txt")))
         {

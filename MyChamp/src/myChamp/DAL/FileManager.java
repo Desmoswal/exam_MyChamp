@@ -7,6 +7,7 @@ package myChamp.DAL;
 
 import myChamp.BE.Team;
 import java.util.List;
+import myChamp.BE.Group;
 import myChamp.BE.Groups;
 
 
@@ -26,7 +27,7 @@ public abstract class FileManager
     
     public abstract List<Team> getTeams(); 
     
-    public abstract void saveGroups (List<Groups> groupList);
+    public abstract void saveGroups (List<Group> groupList);
     
-    public abstract List<Groups> getGroups(); 
+    public abstract List<Group> getGroups(); 
 }
