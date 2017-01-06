@@ -5,7 +5,7 @@
  */
 package myChamp.DAL;
 
-import myChamp.GUI.Controller.FXMLDocumentController;
+import myChamp.GUI.Controller.GroupViewController;
 import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
@@ -40,7 +40,7 @@ public class TextFileHandler extends FileManager
         
         catch (IOException ex)
         {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GroupViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -107,7 +107,7 @@ public class TextFileHandler extends FileManager
         
         catch (IOException ex)
         {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GroupViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
