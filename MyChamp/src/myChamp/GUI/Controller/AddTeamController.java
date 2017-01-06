@@ -90,5 +90,8 @@ public class AddTeamController implements Initializable {
     private void pressedRemoveButton(ActionEvent event) {
         Team selected = addTeamTable.getSelectionModel().getSelectedItem();
         model.removeTeam(selected);
+        model.saveTeams(model.getTeams());
+        addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
+        System.out.println(model.getTeams());
     }
 }
