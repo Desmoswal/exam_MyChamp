@@ -20,7 +20,7 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("myChamp/GUI/View/AddTeam.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("myChamp/GUI/View/MainMenu.fxml"));
         
         Scene scene = new Scene(root);
         
