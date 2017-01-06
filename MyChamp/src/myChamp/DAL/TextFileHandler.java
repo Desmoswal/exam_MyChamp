@@ -65,7 +65,7 @@ public class TextFileHandler extends FileManager
                 //fields[0] is path
                 //fields[1] is artist
                 String[] fields = line.split(",");
-                //songlist.add(new Song(fields[0].trim(), fields[1].trim(), fields[2], fields[3], fields[4],fields[5].trim()));
+                
                 teamlist.add(new Team(fields[0], Integer.parseInt(fields[1]), fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]) , UUID.fromString(fields[6])));
                 
             }
