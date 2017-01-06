@@ -7,46 +7,45 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black; -fx-border-color: green; -fx-border-style: dotted; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="85.0" layoutY="68.0" text="Label" textFill="#1eff00" AnchorPane.leftAnchor="80.0">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Label>
       <Label layoutX="445.0" layoutY="68.0" text="Label" textFill="#1eff00" AnchorPane.rightAnchor="80.0">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Label>
       <Label layoutX="265.0" layoutY="68.0" text="Versus" textFill="#1eff00">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Label>
       <RadioButton layoutX="95.0" layoutY="160.0" mnemonicParsing="false" />
       <RadioButton layoutX="479.0" layoutY="160.0" mnemonicParsing="false" />
       <Label layoutX="269.0" layoutY="153.0" text="Winer" textFill="#1eff00">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Label>
       <TextField layoutX="81.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
       <TextField layoutX="465.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
       <Label layoutX="271.0" layoutY="240.0" text="Goals" textFill="#1eff00">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Label>
       <Button layoutX="260.0" layoutY="318.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-color: green;" text="Save" textFill="#1eff00">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Button>
       <Label layoutX="228.0" layoutY="20.0" text="Match Details" textFill="#0dff00">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
       </Label>
    </children>

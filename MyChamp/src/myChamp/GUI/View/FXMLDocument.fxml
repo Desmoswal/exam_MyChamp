@@ -11,30 +11,30 @@
 
 <AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="footballchampionship.FXMLDocumentController">
     <children>
-        <Button fx:id="button" layoutX="60.0" layoutY="812.0" onAction="#handleButtonAction" style="-fx-background-color: none; -fx-border-color: green;" text="Add Team" textFill="#22ff00">
+        <Button fx:id="button" layoutX="60.0" layoutY="812.0" onAction="#handleButtonAction" style="-fx-background-color: none;" stylesheets="@../../../tableView.css" text="Add Team" textFill="#22ff00">
          <font>
             <Font size="24.0" />
          </font></Button>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <TableView layoutX="61.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="60.0">
+      <TableView fx:id="tblGroupA" layoutX="61.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="60.0">
         <columns>
           <TableColumn prefWidth="185.0" text="Teams" />
           <TableColumn prefWidth="74.0" text="Points" />
         </columns>
       </TableView>
-      <TableView layoutX="346.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;">
+      <TableView fx:id="tblGroupB" layoutX="346.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css">
         <columns>
           <TableColumn prefWidth="180.0" text="Teams" />
           <TableColumn prefWidth="79.0" text="Points" />
         </columns>
       </TableView>
-      <TableView layoutX="671.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" AnchorPane.rightAnchor="349.0">
+      <TableView fx:id="tblGroupC" layoutX="671.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="349.0">
         <columns>
           <TableColumn prefWidth="179.0" text="Teams" />
           <TableColumn text="Points" />
         </columns>
       </TableView>
-      <TableView layoutX="961.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" AnchorPane.rightAnchor="60.0">
+      <TableView fx:id="tblGroupD" layoutX="961.0" layoutY="70.0" prefHeight="213.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="60.0">
         <columns>
           <TableColumn prefWidth="178.0" text="Teams" />
           <TableColumn minWidth="0.0" prefWidth="81.0" text="Points" />
@@ -60,35 +60,35 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="212.0" layoutY="812.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-color: green;" text="Remove Team" textFill="#00ff15">
+      <Button layoutX="212.0" layoutY="812.0" mnemonicParsing="false" style="-fx-background-color: none;" stylesheets="@../../../tableView.css" text="Remove Team" textFill="#00ff15">
          <font>
             <Font size="24.0" />
          </font></Button>
-      <TableView layoutX="61.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;">
+      <TableView layoutX="65.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css">
         <columns>
           <TableColumn prefWidth="126.0" text="Home Team" />
           <TableColumn prefWidth="133.0" text="Guest Team" />
         </columns>
       </TableView>
-      <TableView layoutX="346.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;">
+      <TableView layoutX="346.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css">
         <columns>
           <TableColumn prefWidth="130.0" text="Home Team" />
           <TableColumn prefWidth="129.0" text="Guest Team" />
         </columns>
       </TableView>
-      <TableView layoutX="672.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;">
+      <TableView layoutX="672.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css">
          <columns>
             <TableColumn prefWidth="130.0" text="Home Team" />
             <TableColumn prefWidth="129.0" text="Guest Team" />
          </columns>
       </TableView>
-      <TableView layoutX="960.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;">
+      <TableView layoutX="960.0" layoutY="310.0" prefHeight="393.0" prefWidth="260.0" style="-fx-background-color: grey;" stylesheets="@../../../tableView.css">
          <columns>
             <TableColumn prefWidth="130.0" text="Home Team" />
             <TableColumn prefWidth="129.0" text="Guest Team" />
          </columns>
       </TableView>
-      <Button layoutX="409.0" layoutY="812.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-color: green;" text="Edit Match Details" textFill="#4dff00">
+      <Button layoutX="409.0" layoutY="812.0" mnemonicParsing="false" style="-fx-background-color: none;" stylesheets="@../../../tableView.css" text="Edit Match Details" textFill="#48ff00">
          <font>
             <Font size="24.0" />
          </font>

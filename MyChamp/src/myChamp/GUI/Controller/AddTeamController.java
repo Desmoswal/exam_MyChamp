@@ -63,5 +63,6 @@ public class AddTeamController implements Initializable {
         
         teamList = FXCollections.observableArrayList(model.getTeams());
         model.saveTeams(teamList);
+        addTeamName.clear();
     }
 }
