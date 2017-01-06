@@ -23,5 +23,8 @@ public class Manager {
     public ArrayList<Team> getTeams() {
         return teams.getTeams();
     }
-	
+    
+    public void removeTeam(Team team) {
+        teams.getTeams().remove(team);
+    }
 }

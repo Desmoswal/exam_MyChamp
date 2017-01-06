@@ -7,6 +7,7 @@ package myChamp.GUI.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import myChamp.BE.Groups;
 import myChamp.BE.Team;
 import myChamp.BLL.Manager;
@@ -43,5 +44,9 @@ public class MyChampModel
     
     public List<Groups> getGroups() {
         return saveManager.getGroups();
+    }
+    
+    public void removeTeam(Team team) {
+        manager.removeTeam(team);
     }
 }
