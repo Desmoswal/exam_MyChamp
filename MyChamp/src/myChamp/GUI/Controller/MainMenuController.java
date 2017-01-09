@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myChamp.BE.Groups;
 import myChamp.BE.Teams;
@@ -62,11 +63,14 @@ public class MainMenuController implements Initializable
         Parent root = loader.load(); //load the fxml from the URL
 
         loader.getController(); //get he controller of the loaded fxml
-
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
         
-        primStage.show();
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
+        
+        stageView.show();
     }
     
     @FXML
@@ -79,9 +83,13 @@ public class MainMenuController implements Initializable
         loader.getController(); //get he controller of the loaded fxml
 
         // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
     
     @FXML
@@ -93,10 +101,13 @@ public class MainMenuController implements Initializable
 
         loader.getController(); //get he controller of the loaded fxml
 
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
     
     @FXML
@@ -108,40 +119,49 @@ public class MainMenuController implements Initializable
 
         loader.getController(); //get he controller of the loaded fxml
 
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
     
     @FXML
     private void pressedBtnRanking(ActionEvent event) throws IOException {
         //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
         Stage primStage = (Stage)btnRanking.getScene().getWindow(); //getting the primary stage from any object of the fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/RankingList.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
         loader.getController(); //get he controller of the loaded fxml
 
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
     
     @FXML
     private void pressedBtnFinals(ActionEvent event) throws IOException {
         //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
         Stage primStage = (Stage)btnFinals.getScene().getWindow(); //getting the primary stage from any object of the fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/Finals.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
         loader.getController(); //get he controller of the loaded fxml
 
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
     
     @FXML
@@ -153,10 +173,13 @@ public class MainMenuController implements Initializable
 
         loader.getController(); //get he controller of the loaded fxml
 
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
 
     @FXML
@@ -168,9 +191,12 @@ public class MainMenuController implements Initializable
 
         loader.getController(); //get he controller of the loaded fxml
 
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
         
-        primStage.show();
+        stageView.show();
     }
 }

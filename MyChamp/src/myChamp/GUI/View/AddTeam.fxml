@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.AddTeamController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.AddTeamController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -43,7 +40,7 @@
             <Font name="System Italic" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="addTeamSaveButton" layoutX="130.0" layoutY="404.0" mnemonicParsing="false" onAction="#pressedSaveButton" style="-fx-background-color: black;" stylesheets="@../../../tableView.css" text="Save" textFill="LIME">
+      <Button fx:id="btnClose" layoutX="130.0" layoutY="404.0" mnemonicParsing="false" onAction="#pressedCloseButton" style="-fx-background-color: black;" stylesheets="@../../../tableView.css" text="Close" textFill="LIME">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>

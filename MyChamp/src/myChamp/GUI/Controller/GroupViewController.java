@@ -89,7 +89,7 @@ public class GroupViewController implements Initializable
         int i = 0;
         
         while(i < teamlist.size()) {
-            for (int y = 0; y < grouplist.size();) {
+            for (int y = 0 ; y < grouplist.size() ; ) {
                
                 Random rand = new Random();
                 int randomTeam = rand.nextInt(teamlist.size());
@@ -102,6 +102,7 @@ public class GroupViewController implements Initializable
                 }               
             }
         }
+        model.saveTeams(teamlist);
     }
     
     /**

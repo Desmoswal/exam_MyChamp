@@ -8,6 +8,7 @@ package myChamp.GUI.Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -47,6 +48,10 @@ public class AddTeamController implements Initializable {
     //private Teams allTeams = Teams.getInstance();
     //private ObservableList<Team> teams = FXCollections.observableArrayList(allTeams.getTeams());
     private ObservableList<Team> teamList;
+    @FXML
+    private Button btnClose;
+    @FXML
+    private Button addTeamRemoveButton;
 
     /**
      * Initializes the controller class.
@@ -55,12 +60,16 @@ public class AddTeamController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         addTeamColTeams.setCellValueFactory(new PropertyValueFactory("name"));
         addTeamTable.setItems(FXCollections.observableArrayList(model.getTeamsFromFile()));
+        
+        model.getTeams().addAll(FXCollections.observableArrayList(model.getTeamsFromFile()));
+
+        
     }
     
     @FXML
     private void pressedAddButton(ActionEvent event) {
         model.addNewTeam(addTeamName.getText());
-        System.out.println("Added?");
+        System.out.println("Added: " + addTeamName.getText());
         System.out.println(model.getTeams().toString());
         
         addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
@@ -71,7 +80,6 @@ public class AddTeamController implements Initializable {
         addTeamName.clear();
     }
     
-    @FXML
     private void pressedSaveButton(ActionEvent event) throws IOException {
         //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
         Stage primStage = (Stage)addTeamName.getScene().getWindow(); //getting the primary stage from any object of the fxml
@@ -93,5 +101,13 @@ public class AddTeamController implements Initializable {
         model.saveTeams(model.getTeams());
         addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
         System.out.println(model.getTeams());
+    }
+
+    @FXML
+    private void pressedCloseButton(ActionEvent event)
+    {
+        Stage primStage = (Stage)addTeamName.getScene().getWindow();
+        
+        primStage.close();
     }
 }
