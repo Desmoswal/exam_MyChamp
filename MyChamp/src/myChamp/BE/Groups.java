@@ -19,7 +19,7 @@ public class Groups {
     private Groups() {
         String[] groupNames = {"a","b","c","d"};
         for(int i =0;i<4;i++) {
-            this.addGroup(new Group(groupNames[i]));
+            this.groups.add(new Group(groupNames[i]));
         }
     }
     

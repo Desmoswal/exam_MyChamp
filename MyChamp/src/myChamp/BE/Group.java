@@ -14,7 +14,7 @@ import java.util.UUID;
  */
 public class Group
 {
-    private ArrayList<Team> teams;
+    private ArrayList<Team> teams = new ArrayList<>();
     private String name;
     private final UUID uuid;
 

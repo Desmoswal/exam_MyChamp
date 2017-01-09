@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="anchor-pane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.FinalsController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../Images/background.jpg" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="67.0" layoutY="71.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="50.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="67.0" layoutY="242.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="215.0">
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="67.0" layoutY="379.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.bottomAnchor="215.0" AnchorPane.rightAnchor="950.0">
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="67.0" layoutY="551.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="950.0">
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Line endX="100.0" layoutX="462.0" layoutY="311.0" rotate="18.5" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="145.0" />
+      <Line endX="100.0" layoutX="417.0" layoutY="156.0" rotate="-18.5" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="470.0" AnchorPane.rightAnchor="755.0" />
+      <GridPane layoutX="502.0" layoutY="146.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="515.0">
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="502.0" layoutY="471.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="515.0">
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Line endX="100.0" layoutX="417.0" layoutY="260.0" rotate="-18.5" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="145.0" AnchorPane.rightAnchor="755.0" />
+      <Line endX="100.0" layoutX="417.0" layoutY="260.0" rotate="18.5" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="470.0" />
+      <GridPane layoutX="903.0" layoutY="301.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="114.0">
+         <children>
+            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Line endX="100.0" layoutX="417.0" layoutY="481.0" rotate="39.3" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="460.0" AnchorPane.rightAnchor="337.0" />
+      <Line endX="100.0" layoutX="427.0" layoutY="491.0" rotate="-39.3" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="337.0" AnchorPane.topAnchor="460.0" />
+      <Label alignment="CENTER" layoutX="146.0" layoutY="343.0" style="-fx-border-color: green;" text="Eighth Final" textFill="#41ff00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="578.0" layoutY="343.0" style="-fx-border-color: green;" text="Quarterfinal" textFill="#41ff00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="850.0" layoutY="342.0" style="-fx-border-color: green;" text="FINAL" textFill="#41ff00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="180.0" fitWidth="70.0" layoutX="1184.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: Images\kupa.png;">
+         <image>
+            <Image url="@../../../../Images/kupa.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="921.0" layoutY="452.0" style="-fx-border-color: green;" text="WINNER" textFill="#41ff00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="986.0" layoutY="506.0" style="-fx-border-color: green;" text="Label" textFill="#41ff00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

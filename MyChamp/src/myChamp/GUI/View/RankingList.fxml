@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="650.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.RankingListController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Images/background3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="133.0" layoutY="33.0" text="Group A" textFill="#48ff00" AnchorPane.leftAnchor="133.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="435.0" layoutY="30.0" text="Group B" textFill="#48ff00">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="132.0" layoutY="385.0" text="Group C" textFill="#48ff00">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="434.0" layoutY="385.0" text="Group D" textFill="#48ff00">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="54.0" layoutY="78.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="54.0">
+        <columns>
+          <TableColumn prefWidth="165.0" text="Teams" />
+          <TableColumn prefWidth="72.0" text="Points" />
+        </columns>
+      </TableView>
+      <TableView layoutX="53.0" layoutY="432.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="54.0">
+         <columns>
+            <TableColumn prefWidth="165.0" text="Teams" />
+            <TableColumn prefWidth="72.0" text="Points" />
+         </columns>
+      </TableView>
+      <TableView layoutX="356.0" layoutY="432.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="54.0">
+         <columns>
+            <TableColumn prefWidth="162.0" text="Teams" />
+            <TableColumn prefWidth="73.0" text="Points" />
+         </columns>
+      </TableView>
+      <TableView layoutX="356.0" layoutY="78.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="54.0">
+         <columns>
+            <TableColumn prefWidth="163.0" text="Teams" />
+            <TableColumn prefWidth="72.0" text="Points" />
+         </columns>
+      </TableView>
+      <Label layoutX="277.0" layoutY="13.0" text="Rankings" textFill="#41ff00" AnchorPane.topAnchor="13.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

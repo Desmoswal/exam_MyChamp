@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -55,6 +56,14 @@ public class GroupViewController implements Initializable
     private TableColumn<Team, String> colGroupDGuestTeam;
     @FXML
     private TableColumn<Team, String> colGroupDDate;
+    @FXML
+    private TableView<Team> tblGroupA;
+    @FXML
+    private TableView<Team> tblGroupB;
+    @FXML
+    private TableView<Team> tblGroupC;
+    @FXML
+    private TableView<Team> tblGroupD;
     
     private MyChampModel model = new MyChampModel();
     
@@ -62,8 +71,12 @@ public class GroupViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         assignGroups(model.getTeams(),model.getGroups());
+        
+        //after assigning the teams randomly, we set the table properties and then the table items for each group's table.
         for (Group group : model.getGroups()) {
             setTableProperties(group);
+            
+            setTableItems(group);
         }
     }    
     
@@ -74,20 +87,27 @@ public class GroupViewController implements Initializable
      */
     private void assignGroups(List<Team> teamlist, List<Group> grouplist) {
         int i = 0;
-        while(i <= teamlist.size()) {
-            for (Group group : grouplist) {
+        
+        while(i < teamlist.size()) {
+            for (int y = 0; y < grouplist.size();) {
+               
                 Random rand = new Random();
                 int randomTeam = rand.nextInt(teamlist.size());
                 
-                if(teamlist.get(randomTeam).getGroup() == null) {
-                    group.getTeams().add(teamlist.get(randomTeam));
-                    teamlist.get(randomTeam).setGroup(group.getName());
-                }
+                while(teamlist.get(randomTeam).getGroup() == null) {
+                    grouplist.get(y).getTeams().add(teamlist.get(randomTeam));
+                    teamlist.get(randomTeam).setGroup(grouplist.get(y).getName());
+                    y++;
+                    i++;
+                }               
             }
-            i++;
         }
     }
     
+    /**
+     * Sets table colmn properies for a specified group's table
+     * @param group 
+     */
     private void setTableProperties(Group group) {
         switch(group.getName()) {
             case "a":
@@ -102,6 +122,27 @@ public class GroupViewController implements Initializable
             case "d":
                 colGroupDHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
                 break;
+        }
+    }
+    
+    /**
+     * Sets the table items for a specified group's table.
+     * @param group 
+     */
+    private void setTableItems(Group group) {
+        switch(group.getName()) {
+                case "a":
+                    tblGroupA.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    break;
+                case "b":
+                    tblGroupB.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    break;
+                case "c":
+                    tblGroupC.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    break;
+                case "d":
+                    tblGroupD.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    break;
         }
     }
 }

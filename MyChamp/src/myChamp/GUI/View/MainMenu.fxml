@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.MainMenuController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.MainMenuController">
    <children>
-      <Button fx:id="btnTeamManagement" layoutX="67.0" layoutY="305.0" mnemonicParsing="false" onAction="#pressedBtnTeamManagement" text="Team Management" />
-      <Button fx:id="btnRanking" layoutX="1167.0" layoutY="356.0" mnemonicParsing="false" onAction="#pressedBtnRanking" text="Ranking List" />
-      <Button fx:id="btnSchedules" layoutX="92.0" layoutY="411.0" mnemonicParsing="false" onAction="#pressedBtnSchedules" text="Schedules" />
-      <Button fx:id="btnResults" layoutX="1162.0" layoutY="305.0" mnemonicParsing="false" onAction="#pressedBtnResults" text="Match Results" />
-      <Button fx:id="btnNewTournament" layoutX="506.0" layoutY="586.0" mnemonicParsing="false" onAction="#pressedBtnNewTournament" text="New Tournament" />
-      <Button fx:id="btnLoadTournament" layoutX="666.0" layoutY="586.0" mnemonicParsing="false" onAction="#pressedBtnLoadTournament" text="Load Tournament" />
-      <Button fx:id="btnFinals" layoutX="1184.0" layoutY="411.0" mnemonicParsing="false" onAction="#pressedBtnFinals" text="Finals" />
-      <Button fx:id="btnGroups" layoutX="101.0" layoutY="356.0" mnemonicParsing="false" onAction="#pressedBtnGroups" text="Groups" />
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+         <image>
+            <Image url="@../../../../Images/background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnTeamManagement" layoutX="11.0" layoutY="305.0" mnemonicParsing="false" onAction="#pressedBtnTeamManagement" stylesheets="@../../../tableView.css" text="Team Management" />
+      <Button fx:id="btnRanking" layoutX="1134.0" layoutY="369.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="Ranking List" />
+      <Button fx:id="btnSchedules" layoutX="55.0" layoutY="369.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="Schedules" />
+      <Button fx:id="btnResults" layoutX="1125.0" layoutY="305.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="Match Results" />
+      <Button layoutX="401.0" layoutY="586.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="New Tournament" />
+      <Button layoutX="802.0" layoutY="586.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="Load Tournament" />
+      <Button fx:id="btnFinals" layoutX="1165.0" layoutY="438.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="Finals" />
+      <Button fx:id="btnGroups" layoutX="68.0" layoutY="438.0" mnemonicParsing="false" onAction="#pressedBtnGroups" stylesheets="@../../../tableView.css" text="Groups" />
+
    </children>
 </AnchorPane>
