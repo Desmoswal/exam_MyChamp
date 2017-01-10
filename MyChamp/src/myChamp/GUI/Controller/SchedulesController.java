@@ -1,9 +1,10 @@
+package myChamp.GUI.Controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package myChamp.GUI.Controller;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,96 +25,60 @@ import myChamp.BE.Team;
 import myChamp.GUI.Model.MyChampModel;
 
 /**
- * FXML Controller class
  *
- * @author Kristof
+ * @author Desmoswal
  */
-public class GroupViewController implements Initializable {
-
+public class SchedulesController implements Initializable
+{    
     @FXML
-    private TableView<Team> tblTeams;
+    private Label label;
     @FXML
-    private TableColumn<Team, String> tblColTeams;
+    private TableColumn<Team, String> colGroupAHomeTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupAGuestTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupADate;
+    @FXML
+    private TableColumn<Team, String> colGroupBHomeTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupBGuestTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupBDate;
+    @FXML
+    private TableColumn<Team, String> colGroupCHomeTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupCGuestTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupCDate;
+    @FXML
+    private TableColumn<Team, String> colGroupDHomeTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupDGuestTeam;
+    @FXML
+    private TableColumn<Team, String> colGroupDDate;
     @FXML
     private TableView<Team> tblGroupA;
     @FXML
-    private TableColumn<Team, String> tblColGroupA;
-    @FXML
     private TableView<Team> tblGroupB;
-    @FXML
-    private TableColumn<Team, String> tblColGroupB;
     @FXML
     private TableView<Team> tblGroupC;
     @FXML
-    private TableColumn<Team, String> tblColGroupC;
-    @FXML
     private TableView<Team> tblGroupD;
-    @FXML
-    private TableColumn<Team, String> tblColGroupD;
-    @FXML
-    private Button btnGroup;
-    @FXML
-    private Button btnClose;
     
     private MyChampModel model = new MyChampModel();
-    private boolean teamsHasGroups = false;
-
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        assignGroups(model.getTeams(),model.getGroups());
         
-        setTeamTableProperties();
+        //after assigning the teams randomly, we set the table properties and then the table items for each group's table.
         for (Group group : model.getGroups()) {
             setTableProperties(group);
-        }
-        
-        if(!model.getTeams().isEmpty()) {
-            setTeamTableItems();
-        }
-        
-        for (Team team : model.getTeams()) {
-            if((team.getGroup().equals("a")) || (team.getGroup().equals("b")) || (team.getGroup().equals("c")) || (team.getGroup().equals("d"))) {
-                teamsHasGroups = true;
-            } else {
-                teamsHasGroups = false;
-                System.out.println("groups assignments missing from teams, please assign them!");
-                break;
-            }
-        }
-        
-        if(teamsHasGroups) {
-            for (Group group : model.getGroups()) {
-                setTableItems(group);
-            }
-            btnGroup.setDisable(true);
-        }
-        
-        /*if(!teamsHasGroups) {
-            assignGroups(model.getTeams(),model.getGroups());
-            btnGroup.setDisable(true);
-            for (Group group : model.getGroups()) {
-                setTableItems(group);
-            }
             
-        }*/
-    }    
-
-    @FXML
-    private void pressedBtnGroup(ActionEvent event) {
-        if(!teamsHasGroups) {
-            assignGroups(model.getTeams(),model.getGroups());
-            for (Group group : model.getGroups()) {
-                setTableItems(group);
-            }
-            btnGroup.setDisable(true);
+            setTableItems(group);
         }
-    }
-
-    @FXML
-    private void pressedBtnClose(ActionEvent event) {
-    }
+    }    
     
     /**
      * Assigns teams to groups randomly
@@ -128,7 +94,7 @@ public class GroupViewController implements Initializable {
                 Random rand = new Random();
                 int randomTeam = rand.nextInt(teamlist.size());
                 
-                while(teamlist.get(randomTeam).getGroup() == null || teamlist.get(randomTeam).getGroup().equals("null")) {
+                while(teamlist.get(randomTeam).getGroup() == null) {
                     grouplist.get(y).getTeams().add(teamlist.get(randomTeam));
                     teamlist.get(randomTeam).setGroup(grouplist.get(y).getName());
                     y++;
@@ -137,7 +103,6 @@ public class GroupViewController implements Initializable {
             }
         }
         model.saveTeams(teamlist);
-        model.saveGroups(grouplist);
     }
     
     /**
@@ -147,16 +112,16 @@ public class GroupViewController implements Initializable {
     private void setTableProperties(Group group) {
         switch(group.getName()) {
             case "a":
-                tblColGroupA.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupAHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
                 break;
             case "b":
-                tblColGroupB.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupBHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
                 break;
             case "c":
-                tblColGroupC.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupCHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
                 break;
             case "d":
-                tblColGroupD.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupDHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
                 break;
         }
     }
@@ -180,19 +145,5 @@ public class GroupViewController implements Initializable {
                     tblGroupD.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
                     break;
         }
-    }
-    
-    /**
-     * Sets the all team's table properties to display every team's name
-     */
-    private void setTeamTableProperties() {
-        tblColTeams.setCellValueFactory(new PropertyValueFactory("name"));
-    }
-    
-    /**
-     * Sets the all team's table items
-     */
-    private void setTeamTableItems() {
-        tblTeams.setItems(FXCollections.observableArrayList(model.getTeams()));
     }
 }

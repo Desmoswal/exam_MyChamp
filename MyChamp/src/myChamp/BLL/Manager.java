@@ -17,22 +17,20 @@ import myChamp.BE.Teams;
  * @author Kristof
  */
 public class Manager {
-    private final Teams teams = Teams.getInstance();
-    private final Groups groups = Groups.getInstance();
     
     public void addNewTeam(String name) {
-        teams.addTeam(new Team(name));
+        Teams.getInstance().addTeam(new Team(name));
     }
     
     public ArrayList<Team> getTeams() {
-        return teams.getTeams();
+        return Teams.getInstance().getTeams();
     }
     
     public void removeTeam(Team team) {
-        teams.getTeams().remove(team);
+        Teams.getInstance().getTeams().remove(team);
     }
     
     public List<Group> getGroups() {
-        return groups.getGroups();
+        return Groups.getInstance().getGroups();
     }
 }

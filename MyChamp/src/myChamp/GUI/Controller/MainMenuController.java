@@ -19,6 +19,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myChamp.BE.Groups;
 import myChamp.BE.Teams;
+import myChamp.GUI.Model.MyChampModel;
 
 /**
  * FXML Controller class
@@ -45,6 +46,8 @@ public class MainMenuController implements Initializable
     @FXML
     private Button btnLoadTournament;
 
+    private MyChampModel model = new MyChampModel();
+    
     /**
      * Initializes the controller class.
      */
@@ -53,6 +56,15 @@ public class MainMenuController implements Initializable
     {
         Groups.getInstance();
         Teams.getInstance();
+        
+        if(!model.getTeamsFromFile().isEmpty()) {
+            model.getTeams().addAll(model.getTeamsFromFile());
+        }
+        
+        if(!model.getGroupsFromFile().isEmpty()) {
+            model.getGroups().addAll(model.getGroupsFromFile());
+        }
+        
     }    
     
     @FXML
@@ -96,7 +108,7 @@ public class MainMenuController implements Initializable
     private void pressedBtnSchedules(ActionEvent event) throws IOException {
         //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
         Stage primStage = (Stage)btnSchedules.getScene().getWindow(); //getting the primary stage from any object of the fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/Schedules.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
         loader.getController(); //get he controller of the loaded fxml

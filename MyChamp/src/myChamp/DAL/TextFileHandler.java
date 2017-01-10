@@ -5,7 +5,7 @@
  */
 package myChamp.DAL;
 
-import myChamp.GUI.Controller.GroupViewController;
+import myChamp.GUI.Controller.SchedulesController;
 import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
@@ -40,7 +40,7 @@ public class TextFileHandler extends FileManager
         
         catch (IOException ex)
         {
-            Logger.getLogger(GroupViewController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SchedulesController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -91,12 +91,10 @@ public class TextFileHandler extends FileManager
         String csvString = "";
         for (Group group : groupList)
         {
-           /* 
-            csvString += playlist.getName();
-            for(Song song : playlist.getSongs()) {
-                csvString += "," + song.getUUID(); 
+            csvString += group.getName() + "," + group.getUuid();
+            for (Team team : group.getTeams()) {
+                csvString += "," + team.getUUID();
             }
-            */
             csvString += String.format("%n");
         }
         
@@ -107,7 +105,7 @@ public class TextFileHandler extends FileManager
         
         catch (IOException ex)
         {
-            Logger.getLogger(GroupViewController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SchedulesController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -117,7 +115,8 @@ public class TextFileHandler extends FileManager
      */
     public List<Group> getGroups()
     {
-        Groups group = Groups.getInstance();
+        Groups groups = Groups.getInstance();
+        Teams teams = Teams.getInstance();
         List<Group> groupList = new ArrayList<>();
         
         try(BufferedReader br = new BufferedReader(new FileReader("GroupList.txt")))
@@ -130,26 +129,29 @@ public class TextFileHandler extends FileManager
                 String line = scanner.nextLine();
                 //Separates line into array by comma
                 //fields[0] is name
-                //fields[1] is Songs
+                //fields[1] is uuid
+                //fields after them are the teams in the group
                 String[] fields = line.split(",");
                 
-                /*
-                if(fields.length == 1) {
-                    playList.add(new Playlist(fields[0],new ArrayList<>()));
+                
+                if(fields.length == 2) {
+                    groupList.add(new Group(fields[0],UUID.fromString(fields[1])));
                 } else {
-                    ArrayList<Song> songsInPlaylist = new ArrayList<>();
+                    List<Team> teamsInGroup = new ArrayList<>();
                     for (int i = 0; i < fields.length; i++) {
-                        if(i!=0 && !libSong.getSongList().isEmpty()) {
-                            for (Song song : libSong.getSongList()) {
-                                if(song.getUUID().equals(fields[i])) {
-                                    songsInPlaylist.add(song);
+                        if((i!=0 && i!=1 ) && !teams.getTeams().isEmpty()) {
+                            for (Team team : teams.getTeams()) {
+                                if(team.getUUID().equals(UUID.fromString(fields[i]))) {
+                                    teamsInGroup.add(team);
                                 }
                             }
                             
                         }
                     }
-                    playList.add(new Playlist(fields[0],songsInPlaylist));
-                }*/
+                    Group toAdd = new Group(fields[0],UUID.fromString(fields[1]));
+                    toAdd.getTeams().addAll(teamsInGroup);
+                    groupList.add(toAdd);
+                }
             }
         }
         

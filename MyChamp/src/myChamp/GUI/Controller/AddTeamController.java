@@ -59,9 +59,13 @@ public class AddTeamController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         addTeamColTeams.setCellValueFactory(new PropertyValueFactory("name"));
-        addTeamTable.setItems(FXCollections.observableArrayList(model.getTeamsFromFile()));
         
-        model.getTeams().addAll(FXCollections.observableArrayList(model.getTeamsFromFile()));
+        addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
+        
+       // System.out.println("ezaszar"+model.getTeams());
+       // model.getTeams().removeAll(FXCollections.observableArrayList(model.getTeams()));
+       // model.getTeams().addAll(FXCollections.observableArrayList(model.getTeamsFromFile()));
+       // System.out.println("ezaszar2"+model.getTeams());
 
         
     }
@@ -75,12 +79,12 @@ public class AddTeamController implements Initializable {
         addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
         
         
-        teamList = FXCollections.observableArrayList(model.getTeams());
-        model.saveTeams(teamList);
+        //teamList = FXCollections.observableArrayList(model.getTeams());
+        model.saveTeams(model.getTeams());
         addTeamName.clear();
     }
     
-    private void pressedSaveButton(ActionEvent event) throws IOException {
+    /*private void pressedSaveButton(ActionEvent event) throws IOException {
         //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
         Stage primStage = (Stage)addTeamName.getScene().getWindow(); //getting the primary stage from any object of the fxml
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
@@ -92,7 +96,7 @@ public class AddTeamController implements Initializable {
         primStage.setScene(new Scene(root));
         
         primStage.show();
-    }
+    }*/
     
     @FXML
     private void pressedRemoveButton(ActionEvent event) {
