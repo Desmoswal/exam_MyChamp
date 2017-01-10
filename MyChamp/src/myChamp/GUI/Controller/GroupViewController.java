@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import myChamp.BE.Group;
 import myChamp.BE.Team;
 import myChamp.GUI.Model.MyChampModel;
@@ -72,12 +73,12 @@ public class GroupViewController implements Initializable {
             setTeamTableItems();
         }
         
-        for (Team team : model.getTeams()) {
+        for (Team team : model.getTeamsFromFile()) {
             if((team.getGroup().equals("a")) || (team.getGroup().equals("b")) || (team.getGroup().equals("c")) || (team.getGroup().equals("d"))) {
                 teamsHasGroups = true;
             } else {
                 teamsHasGroups = false;
-                System.out.println("groups assignments missing from teams, please assign them!");
+                System.out.println("Groups assignments missing from teams, please assign them!");
                 break;
             }
         }
@@ -89,14 +90,6 @@ public class GroupViewController implements Initializable {
             btnGroup.setDisable(true);
         }
         
-        /*if(!teamsHasGroups) {
-            assignGroups(model.getTeams(),model.getGroups());
-            btnGroup.setDisable(true);
-            for (Group group : model.getGroups()) {
-                setTableItems(group);
-            }
-            
-        }*/
     }    
 
     @FXML
@@ -112,6 +105,10 @@ public class GroupViewController implements Initializable {
 
     @FXML
     private void pressedBtnClose(ActionEvent event) {
+        
+        Stage primStage = (Stage)btnClose.getScene().getWindow();
+        
+        primStage.close();
     }
     
     /**
