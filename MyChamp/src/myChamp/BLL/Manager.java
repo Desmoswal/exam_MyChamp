@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import myChamp.BE.Group;
 import myChamp.BE.Groups;
+import myChamp.BE.Match;
+import myChamp.BE.Matches;
 import myChamp.BE.Team;
 import myChamp.BE.Teams;
 
@@ -32,5 +34,9 @@ public class Manager {
     
     public List<Group> getGroups() {
         return Groups.getInstance().getGroups();
+    }
+    
+    public List<Match> getMatches() {
+        return Matches.getInstance().getMatches();
     }
 }

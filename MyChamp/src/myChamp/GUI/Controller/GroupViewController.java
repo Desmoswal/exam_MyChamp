@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import myChamp.BE.Group;
 import myChamp.BE.Team;
@@ -191,5 +192,11 @@ public class GroupViewController implements Initializable {
      */
     private void setTeamTableItems() {
         tblTeams.setItems(FXCollections.observableArrayList(model.getTeams()));
+    }
+    
+    @FXML
+    private void pressedTableDebug(MouseEvent event) {
+        System.out.println("source: "+event.getSource());
+        System.out.println("target: "+event.getTarget());
     }
 }

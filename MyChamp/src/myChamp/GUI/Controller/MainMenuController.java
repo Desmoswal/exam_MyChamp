@@ -15,9 +15,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myChamp.BE.Groups;
+import myChamp.BE.Matches;
 import myChamp.BE.Teams;
 import myChamp.GUI.Model.MyChampModel;
 
@@ -56,6 +61,7 @@ public class MainMenuController implements Initializable
     {
         Groups.getInstance();
         Teams.getInstance();
+        Matches.getInstance();
         
         if(!model.getTeamsFromFile().isEmpty()) {
             model.getTeams().addAll(model.getTeamsFromFile());

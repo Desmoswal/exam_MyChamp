@@ -5,6 +5,8 @@
  */
 package myChamp.BE;
 
+import java.util.UUID;
+
 /**
  *
  * @author Kristof
@@ -12,12 +14,29 @@ package myChamp.BE;
 public class Match {
     private Team homeTeam;
     private Team guestTeam;
+    private String homeTeamName;
+    private String guestTeamName;
     private int homeTeamGoals = 0;
     private int guestTeamGoals = 0;
+    private UUID uuid;
+    private Group group;
     
-    public Match(Team homeTeam, Team guestTeam) {
+    public Match(Team homeTeam, Team guestTeam, Group group) {
         this.homeTeam = homeTeam;
         this.guestTeam = guestTeam;
+        this.homeTeamName = homeTeam.getName();
+        this.guestTeamName = guestTeam.getName();
+        this.group = group;
+        this.uuid = UUID.randomUUID();
+    }
+    
+    public Match(Team homeTeam, Team guestTeam, Group group, UUID uuid) {
+        this.homeTeam = homeTeam;
+        this.guestTeam = guestTeam;
+        this.homeTeamName = homeTeam.getName();
+        this.guestTeamName = guestTeam.getName();
+        this.group = group;
+        this.uuid = uuid;
     }
 
     public Team getHomeTeam() {
@@ -36,6 +55,22 @@ public class Match {
         return guestTeamGoals;
     }
 
+    public Group getGroup() {
+        return group;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public String getHomeTeamName() {
+        return homeTeamName;
+    }
+
+    public String getGuestTeamName() {
+        return guestTeamName;
+    }
+
     public void setHomeTeamGoals(int homeTeamGoals) {
         this.homeTeamGoals = homeTeamGoals;
     }
@@ -43,6 +78,4 @@ public class Match {
     public void setGuestTeamGoals(int guestTeamGoals) {
         this.guestTeamGoals = guestTeamGoals;
     }
-    
-    
 }

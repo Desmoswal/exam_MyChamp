@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 import myChamp.BE.Group;
 import myChamp.BE.Groups;
+import myChamp.BE.Match;
 import myChamp.BE.Team;
 import myChamp.BLL.Manager;
 import myChamp.BLL.SaveManager;
@@ -52,5 +53,9 @@ public class MyChampModel
     
     public void removeTeam(Team team) {
         manager.removeTeam(team);
+    }
+    
+    public List<Match> getMatches() {
+        return manager.getMatches();
     }
 }

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.UUID;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +21,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import myChamp.BE.Group;
+import myChamp.BE.Match;
+import myChamp.BE.Matches;
 import myChamp.BE.Team;
 import myChamp.GUI.Model.MyChampModel;
 
@@ -33,76 +37,92 @@ public class SchedulesController implements Initializable
     @FXML
     private Label label;
     @FXML
-    private TableColumn<Team, String> colGroupAHomeTeam;
+    private TableColumn<Match, String> colGroupAHomeTeam;
     @FXML
-    private TableColumn<Team, String> colGroupAGuestTeam;
+    private TableColumn<Match, String> colGroupAGuestTeam;
     @FXML
-    private TableColumn<Team, String> colGroupADate;
+    private TableColumn<Match, String> colGroupADate;
     @FXML
-    private TableColumn<Team, String> colGroupBHomeTeam;
+    private TableColumn<Match, String> colGroupBHomeTeam;
     @FXML
-    private TableColumn<Team, String> colGroupBGuestTeam;
+    private TableColumn<Match, String> colGroupBGuestTeam;
     @FXML
-    private TableColumn<Team, String> colGroupBDate;
+    private TableColumn<Match, String> colGroupBDate;
     @FXML
-    private TableColumn<Team, String> colGroupCHomeTeam;
+    private TableColumn<Match, String> colGroupCHomeTeam;
     @FXML
-    private TableColumn<Team, String> colGroupCGuestTeam;
+    private TableColumn<Match, String> colGroupCGuestTeam;
     @FXML
-    private TableColumn<Team, String> colGroupCDate;
+    private TableColumn<Match, String> colGroupCDate;
     @FXML
-    private TableColumn<Team, String> colGroupDHomeTeam;
+    private TableColumn<Match, String> colGroupDHomeTeam;
     @FXML
-    private TableColumn<Team, String> colGroupDGuestTeam;
+    private TableColumn<Match, String> colGroupDGuestTeam;
     @FXML
-    private TableColumn<Team, String> colGroupDDate;
+    private TableColumn<Match, String> colGroupDDate;
     @FXML
-    private TableView<Team> tblGroupA;
+    private TableView<Match> tblGroupA;
     @FXML
-    private TableView<Team> tblGroupB;
+    private TableView<Match> tblGroupB;
     @FXML
-    private TableView<Team> tblGroupC;
+    private TableView<Match> tblGroupC;
     @FXML
-    private TableView<Team> tblGroupD;
+    private TableView<Match> tblGroupD;
     
     private MyChampModel model = new MyChampModel();
     
     @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-        assignGroups(model.getTeams(),model.getGroups());
+    public void initialize(URL url, ResourceBundle rb) {
         
-        //after assigning the teams randomly, we set the table properties and then the table items for each group's table.
+        /**
+         * PUZZLE PIECES
+         * 
+         * Latest ultimate programming skills.
+         * We have actually no idea what to do..
+         * but.. we have a lot of fors .. which is nice.
+         */
+       /* for (Group group : model.getGroups()) {
+            for (Team team : group.getTeams()) {
+                for (Match match : model.getMatches()) {
+                    match.getGroup().equals(group)
+                            match.getHomeTeam().equals(team)
+                                    match.getGuestTeam().equals(team)
+                }
+            }
+        }*/
+        
+        for (Group group : model.getGroups()) {
+            Random rand = new Random();
+            Random rand2 = new Random();
+            ArrayList<Match> temp = new ArrayList<>();
+            if(!model.getMatches().isEmpty()) {
+                temp = new ArrayList<>();
+                for (Match match : model.getMatches()) {
+                    if(match.getGroup().equals(group)) {
+                        temp.add(match);
+                    }
+                }
+            } else {
+                temp = (ArrayList<Match>) model.getMatches();
+            }
+            while(temp.size() < group.getTeams().size()) {
+                int random = 0;
+                int random2 = 0;
+                while(random == random2) {
+                    random = rand.nextInt(group.getTeams().size());
+                    random2 = rand2.nextInt(group.getTeams().size());
+                }
+                model.getMatches().add(new Match(group.getTeams().get(random),group.getTeams().get(random2),group));
+                model.getMatches().add(new Match(group.getTeams().get(random2),group.getTeams().get(random),group));
+                temp = (ArrayList<Match>) model.getMatches();
+            }
+        }
+        
         for (Group group : model.getGroups()) {
             setTableProperties(group);
             
             setTableItems(group);
         }
-    }    
-    
-    /**
-     * Assigns teams to groups randomly
-     * @param teamlist
-     * @param grouplist 
-     */
-    private void assignGroups(List<Team> teamlist, List<Group> grouplist) {
-        int i = 0;
-        
-        while(i < teamlist.size()) {
-            for (int y = 0 ; y < grouplist.size() ; ) {
-               
-                Random rand = new Random();
-                int randomTeam = rand.nextInt(teamlist.size());
-                
-                while(teamlist.get(randomTeam).getGroup() == null) {
-                    grouplist.get(y).getTeams().add(teamlist.get(randomTeam));
-                    teamlist.get(randomTeam).setGroup(grouplist.get(y).getName());
-                    y++;
-                    i++;
-                }               
-            }
-        }
-        model.saveTeams(teamlist);
     }
     
     /**
@@ -112,16 +132,20 @@ public class SchedulesController implements Initializable
     private void setTableProperties(Group group) {
         switch(group.getName()) {
             case "a":
-                colGroupAHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupAHomeTeam.setCellValueFactory(new PropertyValueFactory("homeTeamName"));
+                colGroupAGuestTeam.setCellValueFactory(new PropertyValueFactory("guestTeamName"));
                 break;
             case "b":
-                colGroupBHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupBHomeTeam.setCellValueFactory(new PropertyValueFactory("homeTeamName"));
+                colGroupBGuestTeam.setCellValueFactory(new PropertyValueFactory("guestTeamName"));
                 break;
             case "c":
-                colGroupCHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupCHomeTeam.setCellValueFactory(new PropertyValueFactory("homeTeamName"));
+                colGroupCGuestTeam.setCellValueFactory(new PropertyValueFactory("guestTeamName"));
                 break;
             case "d":
-                colGroupDHomeTeam.setCellValueFactory(new PropertyValueFactory("name"));
+                colGroupDHomeTeam.setCellValueFactory(new PropertyValueFactory("homeTeamName"));
+                colGroupDGuestTeam.setCellValueFactory(new PropertyValueFactory("guestTeamName"));
                 break;
         }
     }
@@ -131,19 +155,53 @@ public class SchedulesController implements Initializable
      * @param group 
      */
     private void setTableItems(Group group) {
+        ArrayList<Match> temp = new ArrayList<>();
         switch(group.getName()) {
                 case "a":
-                    tblGroupA.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    temp = new ArrayList<>();
+                    for (Match match : model.getMatches()) {
+                        if(match.getGroup().getName().equals("a")) {
+                            temp.add(match);
+                        }
+                    }
+                    tblGroupA.setItems(FXCollections.observableArrayList(temp));
                     break;
                 case "b":
-                    tblGroupB.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    temp = new ArrayList<>();
+                    for (Match match : model.getMatches()) {
+                        if(match.getGroup().getName().equals("b")) {
+                            temp.add(match);
+                        }
+                    }
+                    tblGroupB.setItems(FXCollections.observableArrayList(temp));
                     break;
                 case "c":
-                    tblGroupC.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    temp = new ArrayList<>();
+                    for (Match match : model.getMatches()) {
+                        if(match.getGroup().getName().equals("c")) {
+                            temp.add(match);
+                        }
+                    }
+                    tblGroupC.setItems(FXCollections.observableArrayList(temp));
                     break;
                 case "d":
-                    tblGroupD.setItems(FXCollections.observableArrayList(model.getGroups().get(model.getGroups().indexOf(group)).getTeams()));
+                    temp = new ArrayList<>();
+                    for (Match match : model.getMatches()) {
+                        if(match.getGroup().getName().equals("d")) {
+                            temp.add(match);
+                        }
+                    }
+                    tblGroupD.setItems(FXCollections.observableArrayList(temp));
                     break;
         }
+    }
+    
+    @FXML
+    private void pressedTableDebug(MouseEvent event) {
+        System.out.println("source: "+event.getSource());
+        System.out.println("target: "+event.getTarget());
+        System.out.println(colGroupAHomeTeam.getCellValueFactory());
+        System.out.println(colGroupAHomeTeam.getCellData(tblGroupA.getSelectionModel().getSelectedItem()));
+        System.out.println(model.getMatches());
     }
 }

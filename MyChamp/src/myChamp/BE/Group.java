@@ -15,6 +15,7 @@ import java.util.UUID;
 public class Group
 {
     private ArrayList<Team> teams = new ArrayList<>();
+    private ArrayList<Match> matches = new ArrayList<>();
     private String name;
     private final UUID uuid;
 
@@ -30,6 +31,14 @@ public class Group
 
     public void setTeams(ArrayList<Team> teams) {
         this.teams = teams;
+    }
+
+    public void setMatches(ArrayList<Match> matches) {
+        this.matches = matches;
+    }
+
+    public ArrayList<Match> getMatches() {
+        return matches;
     }
     
     public ArrayList<Team> getTeams() {
