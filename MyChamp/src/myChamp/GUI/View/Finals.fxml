@@ -18,7 +18,7 @@
             <Image url="@../../../../Images/background.jpg" />
          </image>
       </ImageView>
-      <GridPane layoutX="67.0" layoutY="71.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="50.0">
+      <GridPane layoutX="67.0" layoutY="71.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="50.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -29,7 +29,7 @@
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -39,16 +39,16 @@
             </Label>
          </children>
       </GridPane>
-      <GridPane layoutX="67.0" layoutY="242.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="215.0">
+      <GridPane layoutX="67.0" layoutY="242.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="215.0">
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
@@ -60,16 +60,16 @@
             <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <GridPane layoutX="67.0" layoutY="379.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.bottomAnchor="215.0" AnchorPane.rightAnchor="950.0">
+      <GridPane layoutX="67.0" layoutY="379.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.bottomAnchor="215.0" AnchorPane.rightAnchor="950.0">
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
@@ -81,16 +81,16 @@
             <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <GridPane layoutX="67.0" layoutY="551.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="950.0">
+      <GridPane layoutX="67.0" layoutY="551.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="950.0">
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
@@ -104,16 +104,16 @@
       </GridPane>
       <Line endX="100.0" layoutX="462.0" layoutY="311.0" rotate="18.5" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="145.0" />
       <Line endX="100.0" layoutX="417.0" layoutY="156.0" rotate="-18.5" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="470.0" AnchorPane.rightAnchor="755.0" />
-      <GridPane layoutX="502.0" layoutY="146.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="515.0">
+      <GridPane layoutX="502.0" layoutY="146.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="515.0">
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
@@ -125,16 +125,16 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <GridPane layoutX="502.0" layoutY="471.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="515.0">
+      <GridPane layoutX="502.0" layoutY="471.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="515.0">
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
@@ -148,16 +148,16 @@
       </GridPane>
       <Line endX="100.0" layoutX="417.0" layoutY="260.0" rotate="-18.5" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="145.0" AnchorPane.rightAnchor="755.0" />
       <Line endX="100.0" layoutX="417.0" layoutY="260.0" rotate="18.5" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="470.0" />
-      <GridPane layoutX="903.0" layoutY="301.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green;" AnchorPane.rightAnchor="114.0">
+      <GridPane layoutX="903.0" layoutY="301.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="114.0">
          <children>
             <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
@@ -171,17 +171,17 @@
       </GridPane>
       <Line endX="100.0" layoutX="417.0" layoutY="481.0" rotate="39.3" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="460.0" AnchorPane.rightAnchor="337.0" />
       <Line endX="100.0" layoutX="427.0" layoutY="491.0" rotate="-39.3" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="337.0" AnchorPane.topAnchor="460.0" />
-      <Label alignment="CENTER" layoutX="146.0" layoutY="343.0" style="-fx-border-color: green;" text="Eighth Final" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="146.0" layoutY="343.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Eighth Final" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="578.0" layoutY="343.0" style="-fx-border-color: green;" text="Quarterfinal" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="577.0" layoutY="341.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Quarterfinal" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="850.0" layoutY="342.0" style="-fx-border-color: green;" text="FINAL" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="850.0" layoutY="342.0" style="-fx-border-color: green; -fx-border-width: 2;" text="FINAL" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
@@ -191,12 +191,12 @@
             <Image url="@../../../../Images/kupa.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="921.0" layoutY="452.0" style="-fx-border-color: green;" text="WINNER" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="921.0" layoutY="452.0" style="-fx-border-color: green; -fx-border-width: 2;" text="WINNER" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="986.0" layoutY="506.0" style="-fx-border-color: green;" text="Label" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="986.0" layoutY="506.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Label" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>

@@ -79,7 +79,7 @@ public class SchedulesController implements Initializable
          * 
          * Latest ultimate programming skills.
          * We have actually no idea what to do..
-         * but.. we have a lot of fors .. which is nice.
+         * but.. we have a lot of fors .. which is nice.yes.
          */
        /* for (Group group : model.getGroups()) {
             for (Team team : group.getTeams()) {
@@ -90,31 +90,32 @@ public class SchedulesController implements Initializable
                 }
             }
         }*/
-        
-        for (Group group : model.getGroups()) {
-            Random rand = new Random();
-            Random rand2 = new Random();
-            ArrayList<Match> temp = new ArrayList<>();
-            if(!model.getMatches().isEmpty()) {
-                temp = new ArrayList<>();
-                for (Match match : model.getMatches()) {
-                    if(match.getGroup().equals(group)) {
-                        temp.add(match);
+        for(int i = 0; i<4;i++) {
+            for (Group group : model.getGroups()) {
+                Random rand = new Random();
+                Random rand2 = new Random();
+                ArrayList<Match> temp = new ArrayList<>();
+                if(!model.getMatches().isEmpty()) {
+                    temp = new ArrayList<>();
+                    for (Match match : model.getMatches()) {
+                        if(match.getGroup().equals(group)) {
+                            temp.add(match);
+                        }
                     }
+                } else {
+                    temp = (ArrayList<Match>) model.getMatches();
                 }
-            } else {
-                temp = (ArrayList<Match>) model.getMatches();
-            }
-            while(temp.size() < group.getTeams().size()) {
-                int random = 0;
-                int random2 = 0;
-                while(random == random2) {
-                    random = rand.nextInt(group.getTeams().size());
-                    random2 = rand2.nextInt(group.getTeams().size());
+                while(temp.size() < group.getTeams().size()) {
+                    int random = 0;
+                    int random2 = 0;
+                    while(random == random2) {
+                        random = rand.nextInt(group.getTeams().size());
+                        random2 = rand2.nextInt(group.getTeams().size());
+                    }
+                    model.getMatches().add(new Match(group.getTeams().get(random),group.getTeams().get(random2),group));
+                    model.getMatches().add(new Match(group.getTeams().get(random2),group.getTeams().get(random),group));
+                    temp = (ArrayList<Match>) model.getMatches();
                 }
-                model.getMatches().add(new Match(group.getTeams().get(random),group.getTeams().get(random2),group));
-                model.getMatches().add(new Match(group.getTeams().get(random2),group.getTeams().get(random),group));
-                temp = (ArrayList<Match>) model.getMatches();
             }
         }
         
