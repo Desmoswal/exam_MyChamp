@@ -13,6 +13,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.UUID;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -71,6 +72,8 @@ public class SchedulesController implements Initializable
     
     private MyChampModel model = new MyChampModel();
     
+    private ObservableList<Match> matchList;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -118,6 +121,7 @@ public class SchedulesController implements Initializable
                 }
             }
         }
+        model.saveMatches(model.getMatches());
         
         for (Group group : model.getGroups()) {
             setTableProperties(group);

@@ -9,6 +9,7 @@ import myChamp.BE.Team;
 import java.util.List;
 import myChamp.BE.Group;
 import myChamp.BE.Groups;
+import myChamp.BE.Match;
 
 
 /**
@@ -30,4 +31,9 @@ public abstract class FileManager
     public abstract void saveGroups (List<Group> groupList);
     
     public abstract List<Group> getGroups(); 
+    
+    public abstract void saveMatches(List<Match> matchList);
+    
+    public abstract List<Match> getMatches();
+    
 }

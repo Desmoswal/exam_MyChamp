@@ -12,6 +12,7 @@ import myChamp.BE.Team;
 import myChamp.DAL.FileManager;
 import myChamp.DAL.TextFileHandler;
 import java.util.List;
+import myChamp.BE.Match;
 
 /**
  *  Connected to the BusinessEntities and to the Data Access Layer
@@ -40,5 +41,10 @@ public class SaveManager
     public List<Group> getGroups()
     {
         return fileManager.getGroups();
+    }
+    
+    public void saveMatches(List<Match> matchList)
+    {
+        fileManager.saveMatches(matchList);
     }
 }

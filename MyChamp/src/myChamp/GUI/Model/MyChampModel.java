@@ -58,4 +58,9 @@ public class MyChampModel
     public List<Match> getMatches() {
         return manager.getMatches();
     }
+    
+    public void saveMatches(List<Match> matchList)
+    {
+        saveManager.saveMatches(matchList);
+    }
 }

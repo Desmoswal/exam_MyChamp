@@ -30,7 +30,6 @@ public class TextFileHandler extends FileManager
         for (Team team : teamList)
         {
             csvString += team.getName() + "," + team.getScore() + "," + team.getGroup() + "," + team.getGoals() + "," + team.getMatchesPlayed() + "," + team.getPlayedTeams() + "," + team.getUUID() + String.format("%n");
-            //csvString += song.getPath() + "," + song.getArtist() + "," + song.getTitle() + "," + song.getGenre() + "," + song.getTime() + "," + song.getUUID() + String.format("%n");//save info and format according to system and localization
         }
         
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("TeamList.txt")))
@@ -62,8 +61,6 @@ public class TextFileHandler extends FileManager
                 //Gets next line in file
                 String line = scanner.nextLine();
                 //Separates line into array by comma
-                //fields[0] is path
-                //fields[1] is artist
                 String[] fields = line.split(",");
                 
                 teamlist.add(new Team(fields[0], Integer.parseInt(fields[1]), fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]) , UUID.fromString(fields[6])));
@@ -162,5 +159,80 @@ public class TextFileHandler extends FileManager
         
         System.out.println(groupList);
         return groupList;
+    }
+    
+    /**
+     * Saves every Match
+     * @param matchList 
+     */
+    @Override
+    public void saveMatches(List<Match> matchList)
+    {
+        String csvString = "";
+        for (Match match : matchList)
+        {
+            csvString += match.getHomeTeam().getUUID() + "," + match.getGuestTeam().getUUID()+ "," + match.getGroup().getName() + "," + match.getHomeTeamGoals() + "," + match.getGuestTeamGoals() + "," + match.getUuid() + String.format("%n");          
+        }
+        
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("MatchList.txt")))
+        {
+            bw.write(csvString);
+        } 
+        
+        catch (IOException ex)
+        {
+            Logger.getLogger(SchedulesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Reads every line from MatchList
+     * @return 
+     */
+    @Override
+    public List<Match> getMatches()
+    {
+        List<Match> matchList = new ArrayList();
+        
+        
+        try(BufferedReader br = new BufferedReader(new FileReader("MatchList.txt")))
+        {
+            Scanner scanner = new Scanner(br);
+            
+            while(scanner.hasNext())
+            {
+                //Gets next line in file
+                String line = scanner.nextLine();
+                //Separates line into array by comma
+                String[] fields = line.split(",");
+                
+                //matchList.add(new Match(fields[0], fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
+                
+                for(Team team : this.getTeams())
+                {
+                    if(team.getUUID().equals(fields[0]))
+                    {
+                        
+                    }
+                }
+                
+                for(Team team : this.getTeams())
+                {
+                    if(team.getUUID().equals(fields[1]))
+                    {
+                        
+                    }
+                }
+                
+                //matchList.add(new Match(fields[0], fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
+            }
+        }
+        catch(IOException ioe)
+        {
+            System.out.println("Something went horribly wrong during reading from TeamList.txt");
+        }
+        
+        System.out.println(matchList);
+        return matchList;
     }
 }

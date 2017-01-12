@@ -30,7 +30,7 @@ public class Match {
         this.uuid = UUID.randomUUID();
     }
     
-    public Match(Team homeTeam, Team guestTeam, Group group, UUID uuid) {
+    public Match(Team homeTeam, Team guestTeam, Group group, int homeTeamGoals, int guestTeamGoals, UUID uuid) {
         this.homeTeam = homeTeam;
         this.guestTeam = guestTeam;
         this.homeTeamName = homeTeam.getName();
