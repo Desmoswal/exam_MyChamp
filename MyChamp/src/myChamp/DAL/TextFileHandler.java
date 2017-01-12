@@ -207,23 +207,27 @@ public class TextFileHandler extends FileManager
                 String[] fields = line.split(",");
                 
                 //matchList.add(new Match(fields[0], fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
-                
+                Team homeTeam = null;
+                Team guestTeam = null;
+                Group matchGroup = null;
                 for(Team team : this.getTeams())
                 {
-                    if(team.getUUID().equals(fields[0]))
+                    if(team.getUUID().equals(UUID.fromString(fields[0])))
                     {
-                        
+                        homeTeam = team;
+                    }
+                    if(team.getUUID().equals(UUID.fromString(fields[1]))) {
+                        guestTeam = team;
                     }
                 }
                 
-                for(Team team : this.getTeams())
-                {
-                    if(team.getUUID().equals(fields[1]))
-                    {
-                        
+                for(Group group : this.getGroups()) {
+                    if(group.getName().equals(fields[2])) {
+                        matchGroup = group;
                     }
                 }
                 
+                matchList.add(new Match(homeTeam, guestTeam, matchGroup, Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
                 //matchList.add(new Match(fields[0], fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
             }
         }

@@ -47,4 +47,8 @@ public class SaveManager
     {
         fileManager.saveMatches(matchList);
     }
+    
+    public List<Match> getMatches() {
+        return fileManager.getMatches();
+    }
 }

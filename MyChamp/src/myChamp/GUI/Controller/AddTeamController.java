@@ -72,16 +72,18 @@ public class AddTeamController implements Initializable {
     
     @FXML
     private void pressedAddButton(ActionEvent event) {
-        model.addNewTeam(addTeamName.getText());
-        System.out.println("Added: " + addTeamName.getText());
-        System.out.println(model.getTeams().toString());
-        
-        addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
-        
-        
-        //teamList = FXCollections.observableArrayList(model.getTeams());
-        model.saveTeams(model.getTeams());
-        addTeamName.clear();
+       if(!addTeamName.getText().isEmpty()) {
+            model.addNewTeam(addTeamName.getText());
+            System.out.println("Added: " + addTeamName.getText());
+            System.out.println(model.getTeams().toString());
+
+            addTeamTable.setItems(FXCollections.observableArrayList(model.getTeams()));
+
+
+            //teamList = FXCollections.observableArrayList(model.getTeams());
+            model.saveTeams(model.getTeams());
+            addTeamName.clear();
+        }
     }
     
     /*private void pressedSaveButton(ActionEvent event) throws IOException {

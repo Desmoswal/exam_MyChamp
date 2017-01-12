@@ -128,6 +128,8 @@ public class SchedulesController implements Initializable
             
             setTableItems(group);
         }
+        
+        model.getMatchesFromFile();
     }
     
     /**

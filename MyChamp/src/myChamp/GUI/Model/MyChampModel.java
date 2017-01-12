@@ -63,4 +63,8 @@ public class MyChampModel
     {
         saveManager.saveMatches(matchList);
     }
+    
+    public List<Match> getMatchesFromFile() {
+        return saveManager.getMatches();
+    }
 }
