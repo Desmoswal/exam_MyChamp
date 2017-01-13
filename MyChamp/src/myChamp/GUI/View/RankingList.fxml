@@ -56,7 +56,7 @@
       <TableView fx:id="tblGroupB" layoutX="356.0" layoutY="78.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="54.0">
          <columns>
             <TableColumn fx:id="colTeamsGroupB" prefWidth="163.0" text="Teams" />
-            <TableColumn fx:id="colPoinstGroupB" prefWidth="72.0" text="Points" />
+            <TableColumn fx:id="colPointsGroupB" prefWidth="72.0" text="Points" />
          </columns>
       </TableView>
       <Label layoutX="277.0" layoutY="13.0" text="Rankings" textFill="#41ff00" AnchorPane.topAnchor="13.0">
