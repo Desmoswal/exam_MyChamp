@@ -95,7 +95,7 @@ public class SchedulesController implements Initializable
         }*/
         
        /**
-        * this was our ultimate randomizer code to create matches (incorrectly) but then we got to know that we could have hardcoded it all. so we did.
+        * this was our ultimate randomizer code to create matches (incorrectly) but then we got to know that we could have hardcoded it all. so we did. (see below, on the bottom)
         * btw we were looking for an algorithm to run through all assigns but we could not find it
         */
        /*for(int i = 0; i<4;i++) {
@@ -246,7 +246,7 @@ public class SchedulesController implements Initializable
             model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(0),group,5));
             
             //round 6
-            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(0),group,6));
+            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(0),group,6));
             model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(1),group,6));
     }
 }
