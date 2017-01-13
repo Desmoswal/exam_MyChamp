@@ -21,18 +21,20 @@ public class Match {
     private UUID uuid;
     private Group group;
     private int round;
+    private int isFinal;
     
-    public Match(Team homeTeam, Team guestTeam, Group group, int round) {
+    public Match(Team homeTeam, Team guestTeam, Group group, int round, int isFinal) {
         this.homeTeam = homeTeam;
         this.guestTeam = guestTeam;
         this.homeTeamName = homeTeam.getName();
         this.guestTeamName = guestTeam.getName();
         this.group = group;
         this.round = round;
+        this.isFinal = isFinal;
         this.uuid = UUID.randomUUID();
     }
     
-    public Match(Team homeTeam, Team guestTeam, Group group, int round, int homeTeamGoals, int guestTeamGoals, UUID uuid) {
+    public Match(Team homeTeam, Team guestTeam, Group group, int round, int isFinal, int homeTeamGoals, int guestTeamGoals, UUID uuid) {
         this.homeTeam = homeTeam;
         this.guestTeam = guestTeam;
         this.homeTeamName = homeTeam.getName();
@@ -41,6 +43,7 @@ public class Match {
         this.guestTeamGoals = guestTeamGoals;
         this.group = group;
         this.round = round;
+        this.isFinal = isFinal;
         this.uuid = uuid;
     }
 
@@ -78,6 +81,10 @@ public class Match {
 
     public int getRound() {
         return round;
+    }
+
+    public int isFinal() {
+        return isFinal;
     }
 
     public void setHomeTeamGoals(int homeTeamGoals) {

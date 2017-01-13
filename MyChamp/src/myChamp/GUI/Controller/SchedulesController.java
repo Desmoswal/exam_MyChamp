@@ -129,7 +129,13 @@ public class SchedulesController implements Initializable
        
         if(model.getMatches().isEmpty()) {
             for(Group group : model.getGroups()) {
-                createMatches(group);
+                if(group.getTeams().size() == 3) {
+                    createMatchesFor3Teams(group);
+                } else if(group.getTeams().size() == 4) {
+                    createMatchesFor4Teams(group);
+                } else {
+                    System.out.println("OH! Something is wrong! There's hardcode in here, so we cannot create matches if we have more teams than 4 or less teams than 3 in a group :(");
+                }
             }
         }
         model.saveMatches(model.getMatches());
@@ -223,30 +229,51 @@ public class SchedulesController implements Initializable
         System.out.println(model.getMatches());
     }
     
-    private void createMatches(Group group) {
+    private void createMatchesFor4Teams(Group group) {
             //round 1
-            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(1),group,1));
-            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(3),group,1));
+            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(1),group,1,0));
+            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(3),group,1,0));
             
             //round 2
-            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(2),group,2));
-            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(3),group,2));
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(2),group,2,0));
+            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(3),group,2,0));
             
             //round 3
-            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(2),group,3));
-            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(3),group,3));
+            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(2),group,3,0));
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(3),group,3,0));
             
             //reverse
             //round 4
-            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(0),group,4));
-            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(2),group,4));
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(0),group,4,0));
+            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(2),group,4,0));
             
             //round 5
-            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(1),group,5));
-            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(0),group,5));
+            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(1),group,5,0));
+            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(0),group,5,0));
             
             //round 6
-            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(0),group,6));
-            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(1),group,6));
+            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(0),group,6,0));
+            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(1),group,6,0));
+    }
+    
+    private void createMatchesFor3Teams(Group group) {
+        //round 1
+        model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(1),group,1,0));
+        
+        //round 2
+        model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(2),group,2,0));
+        
+        //round 3
+        model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(2),group,3,0));
+        
+        //reverse
+        //round 4
+        model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(0),group,4,0));
+        
+        //round 5
+        model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(1),group,5,0));
+        
+        //round 6
+        model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(0),group,6,0));
     }
 }

@@ -7,14 +7,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.MatchGroupRoundsController">
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.MatchGroupRoundsController">
    <children>
       <ImageView fitHeight="550.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/bg8.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tblRound1" layoutX="3.0" layoutY="38.0" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
+      <TableView fx:id="tblRound1" layoutX="3.0" layoutY="38.0" onMousePressed="#pressedOnTable" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
         <columns>
           <TableColumn fx:id="colHomeTeamRound1" prefWidth="150.0" text="Home Team" />
           <TableColumn fx:id="colHomeGoalsRound1" prefWidth="56.0" text="Goals" />
@@ -28,7 +28,7 @@
       <Label layoutX="640.0" layoutY="183.0" stylesheets="@../../../tableView.css" text="Round 4" />
       <Label layoutX="180.0" layoutY="358.0" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../../tableView.css" text="Round 5" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="640.0" />
       <Label layoutX="640.0" layoutY="358.0" stylesheets="@../../../tableView.css" text="Round 6" />
-      <TableView fx:id="tblRound2" layoutX="375.0" layoutY="38.0" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
+      <TableView fx:id="tblRound2" layoutX="375.0" layoutY="38.0" onMousePressed="#pressedOnTable" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
          <columns>
             <TableColumn fx:id="colHomeTeamRound2" prefWidth="150.0" text="Home Team" />
             <TableColumn fx:id="colHomeGoalsRound2" prefWidth="56.0" text="Goals" />
@@ -36,7 +36,7 @@
             <TableColumn fx:id="colGuestGoalsRound2" prefWidth="57.0" text="Goals" />
          </columns>
       </TableView>
-      <TableView fx:id="tblRound4" layoutX="378.0" layoutY="222.0" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
+      <TableView fx:id="tblRound4" layoutX="378.0" layoutY="222.0" onMousePressed="#pressedOnTable" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
          <columns>
             <TableColumn fx:id="colHomeTeamRound4" prefWidth="150.0" text="Home Team" />
             <TableColumn fx:id="colHomeGoalsRound4" prefWidth="56.0" text="Goals" />
@@ -44,7 +44,7 @@
             <TableColumn fx:id="colGuestGoalsRound4" prefWidth="57.0" text="Goals" />
          </columns>
       </TableView>
-      <TableView fx:id="tblRound6" layoutX="375.0" layoutY="395.0" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
+      <TableView fx:id="tblRound6" layoutX="375.0" layoutY="395.0" onMousePressed="#pressedOnTable" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="10.0">
          <columns>
             <TableColumn fx:id="colHomeTeamRound6" prefWidth="150.0" text="Home Team" />
             <TableColumn fx:id="colHomeGoalsRound6" prefWidth="56.0" text="Goals" />
@@ -52,7 +52,7 @@
             <TableColumn fx:id="colGuestGoalsRound6" prefWidth="57.0" text="Goals" />
          </columns>
       </TableView>
-      <TableView fx:id="tblRound5" layoutX="4.0" layoutY="395.0" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
+      <TableView fx:id="tblRound5" layoutX="4.0" layoutY="395.0" onMousePressed="#pressedOnTable" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
          <columns>
             <TableColumn fx:id="colHomeTeamRound5" prefWidth="150.0" text="Home Team" />
             <TableColumn fx:id="colHomeGoalsRound5" prefWidth="56.0" text="Goals" />
@@ -60,7 +60,7 @@
             <TableColumn fx:id="colGuestGoalsRound5" prefWidth="57.0" text="Goals" />
          </columns>
       </TableView>
-      <TableView fx:id="tblRound3" layoutX="4.0" layoutY="222.0" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
+      <TableView fx:id="tblRound3" layoutX="4.0" layoutY="222.0" onMousePressed="#pressedOnTable" prefHeight="128.0" prefWidth="420.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="10.0">
          <columns>
             <TableColumn fx:id="colHomeTeamRound3" prefWidth="150.0" text="Home Team" />
             <TableColumn fx:id="colHomeGoalsRound3" prefWidth="56.0" text="Goals" />

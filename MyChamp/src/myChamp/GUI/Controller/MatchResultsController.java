@@ -17,6 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import myChamp.BE.Group;
+import myChamp.GUI.Model.MyChampModel;
 
 /**
  * FXML Controller class
@@ -33,6 +35,8 @@ public class MatchResultsController implements Initializable {
     private Button btnResultsGroupC;
     @FXML
     private Button btnResultsGroupD;
+    
+    private MyChampModel model = new MyChampModel();
 
     /**
      * Initializes the controller class.
@@ -49,8 +53,13 @@ public class MatchResultsController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
-        loader.getController(); //get he controller of the loaded fxml
-        
+        MatchGroupRoundsController controller = loader.getController(); //get he controller of the loaded fxml
+        for(Group group : model.getGroups()) {
+            if(group.getName().equals("a")) {
+                    controller.setRounds(group, model.getMatchesFromFile());
+            }
+        }
+
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
 
@@ -67,7 +76,12 @@ public class MatchResultsController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
-        loader.getController(); //get he controller of the loaded fxml
+        MatchGroupRoundsController controller = loader.getController(); //get he controller of the loaded fxml
+        for(Group group : model.getGroupsFromFile()) {
+            if(group.getName().equals("b")) {
+                    controller.setRounds(group, model.getMatchesFromFile());
+            }
+        }
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
@@ -85,7 +99,12 @@ public class MatchResultsController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
-        loader.getController(); //get he controller of the loaded fxml
+        MatchGroupRoundsController controller = loader.getController(); //get he controller of the loaded fxml
+        for(Group group : model.getGroups()) {
+            if(group.getName().equals("c")) {
+                    controller.setRounds(group, model.getMatchesFromFile());
+            }
+        }
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
@@ -103,7 +122,12 @@ public class MatchResultsController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
-        loader.getController(); //get he controller of the loaded fxml
+        MatchGroupRoundsController controller = loader.getController(); //get he controller of the loaded fxml
+        for(Group group : model.getGroups()) {
+            if(group.getName().equals("d")) {
+                    controller.setRounds(group, model.getMatchesFromFile());
+            }
+        }
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));

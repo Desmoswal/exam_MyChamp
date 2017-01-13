@@ -169,9 +169,9 @@ public class TextFileHandler extends FileManager
     public void saveMatches(List<Match> matchList)
     {
         String csvString = "";
-        for (Match match : matchList)
-        {
-            csvString += match.getHomeTeam().getUUID() + "," + match.getGuestTeam().getUUID()+ "," + match.getGroup().getName() + "," + match.getHomeTeamGoals() + "," + match.getGuestTeamGoals() + "," + match.getUuid() + "," + match.getRound() + String.format("%n");          
+        int isFinal;
+        for (Match match : matchList) {
+            csvString += match.getHomeTeam().getUUID() + "," + match.getGuestTeam().getUUID()+ "," + match.getGroup().getName() + "," + match.getHomeTeamGoals() + "," + match.getGuestTeamGoals() + "," + match.getUuid() + "," + match.getRound() + "," + match.isFinal() + String.format("%n");          
         }
         
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("MatchList.txt")))
@@ -227,7 +227,7 @@ public class TextFileHandler extends FileManager
                     }
                 }
                 
-                matchList.add(new Match(homeTeam, guestTeam, matchGroup, Integer.parseInt(fields[6]), Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
+                matchList.add(new Match(homeTeam, guestTeam, matchGroup, Integer.parseInt(fields[6]), Integer.parseInt(fields[7]), Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
                 //matchList.add(new Match(fields[0], fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), UUID.fromString(fields[5])));
             }
         }

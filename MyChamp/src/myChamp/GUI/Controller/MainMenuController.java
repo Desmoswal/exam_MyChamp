@@ -202,22 +202,4 @@ public class MainMenuController implements Initializable
         
         stageView.show();
     }
-
-    @FXML
-    private void pressedBtnLoadTournament(ActionEvent event) throws IOException {
-        //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
-        Stage primStage = (Stage)btnLoadTournament.getScene().getWindow(); //getting the primary stage from any object of the fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
-        Parent root = loader.load(); //load the fxml from the URL
-
-        loader.getController(); //get he controller of the loaded fxml
-
-        Stage stageView = new Stage();
-        stageView.setScene(new Scene(root));
-
-        stageView.initModality(Modality.WINDOW_MODAL);
-        stageView.initOwner(primStage);
-        
-        stageView.show();
-    }
 }
