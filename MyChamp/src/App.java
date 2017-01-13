@@ -26,6 +26,7 @@ public class App extends Application
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
         stage.getIcons().add(new Image("/Images/icon.png"));
     }

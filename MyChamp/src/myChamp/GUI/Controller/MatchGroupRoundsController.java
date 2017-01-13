@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -158,10 +159,9 @@ public class MatchGroupRoundsController implements Initializable
             // this is a popup, we will create a new window for it
             Stage stageView = new Stage();
             stageView.setScene(new Scene(root));
-
+            stageView.getIcons().add(new Image("/Images/icon.png"));
             stageView.initModality(Modality.WINDOW_MODAL);
             stageView.initOwner(primStage);
-
             //-------------------------
 
             stageView.show();

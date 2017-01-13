@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myChamp.BE.Group;
@@ -62,10 +63,9 @@ public class MatchResultsController implements Initializable {
 
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
 
@@ -85,10 +85,9 @@ public class MatchResultsController implements Initializable {
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
 
@@ -108,10 +107,9 @@ public class MatchResultsController implements Initializable {
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
 
@@ -131,10 +129,9 @@ public class MatchResultsController implements Initializable {
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     

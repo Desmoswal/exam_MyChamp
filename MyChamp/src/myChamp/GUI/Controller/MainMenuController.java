@@ -87,10 +87,9 @@ public class MainMenuController implements Initializable
         
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     
@@ -106,10 +105,9 @@ public class MainMenuController implements Initializable
         // this is a popup, we will create a new window for it
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     
@@ -124,10 +122,9 @@ public class MainMenuController implements Initializable
 
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     
@@ -142,10 +139,9 @@ public class MainMenuController implements Initializable
 
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     
@@ -160,10 +156,9 @@ public class MainMenuController implements Initializable
 
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     
@@ -178,10 +173,9 @@ public class MainMenuController implements Initializable
 
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
     
@@ -196,10 +190,9 @@ public class MainMenuController implements Initializable
 
         Stage stageView = new Stage();
         stageView.setScene(new Scene(root));
-
+        stageView.getIcons().add(new Image("/Images/icon.png"));
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.initOwner(primStage);
-        
         stageView.show();
     }
 }
