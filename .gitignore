@@ -20,7 +20,7 @@ core
 
 myChamp/build/
 myChamp/dist/
-myChamp/nbproject/
+#myChamp/nbproject/
 
 #java specific
 *.class
