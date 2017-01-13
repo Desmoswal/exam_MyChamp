@@ -132,7 +132,7 @@ public class MainMenuController implements Initializable
     private void pressedBtnResults(ActionEvent event) throws IOException {
         //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
         Stage primStage = (Stage)btnResults.getScene().getWindow(); //getting the primary stage from any object of the fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchResults.fxml"));
         Parent root = loader.load(); //load the fxml from the URL
 
         loader.getController(); //get he controller of the loaded fxml

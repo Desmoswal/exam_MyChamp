@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor-pane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.FinalsController">
+<AnchorPane id="anchor-pane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.FinalsController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -27,26 +26,26 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerA" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblSecondB" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
          </children>
       </GridPane>
-      <GridPane layoutX="67.0" layoutY="242.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="215.0">
+      <GridPane layoutX="67.0" layoutY="242.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.bottomAnchor="387.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="215.0">
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerB" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblSecondA" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -62,12 +61,12 @@
       </GridPane>
       <GridPane layoutX="67.0" layoutY="379.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.bottomAnchor="215.0" AnchorPane.rightAnchor="950.0">
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerC" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblSecondD" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -81,14 +80,15 @@
             <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
+      <Line endX="100.0" layoutX="417.0" layoutY="481.0" rotate="39.3" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="460.0" AnchorPane.rightAnchor="337.0" />
       <GridPane layoutX="67.0" layoutY="551.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="950.0">
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerD" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblSecondC" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -102,16 +102,16 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Line endX="100.0" layoutX="462.0" layoutY="311.0" rotate="18.5" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="145.0" />
-      <Line endX="100.0" layoutX="417.0" layoutY="156.0" rotate="-18.5" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="470.0" AnchorPane.rightAnchor="755.0" />
+      <Line endX="20.0" layoutX="462.0" layoutY="311.0" startX="-100.0" stroke="#50ff00" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="119.0" />
+      <Line endX="20.0" layoutX="417.0" layoutY="156.0" startX="-100.0" stroke="#50ff00" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="274.0" />
       <GridPane layoutX="502.0" layoutY="146.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="515.0">
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerQ1" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerQ2" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -127,12 +127,12 @@
       </GridPane>
       <GridPane layoutX="502.0" layoutY="471.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="515.0">
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerQ3" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerQ4" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -146,16 +146,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Line endX="100.0" layoutX="417.0" layoutY="260.0" rotate="-18.5" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="145.0" AnchorPane.rightAnchor="755.0" />
-      <Line endX="100.0" layoutX="417.0" layoutY="260.0" rotate="18.5" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="470.0" />
       <GridPane layoutX="903.0" layoutY="301.0" prefHeight="118.0" prefWidth="245.0" style="-fx-border-color: green; -fx-border-width: 3;" AnchorPane.rightAnchor="114.0">
          <children>
-            <Label text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerSemi1" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="lblWinnerSemi2" layoutX="11.0" layoutY="14.0" text="Label" textFill="#41ff00" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -169,14 +167,13 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Line endX="100.0" layoutX="417.0" layoutY="481.0" rotate="39.3" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="460.0" AnchorPane.rightAnchor="337.0" />
       <Line endX="100.0" layoutX="427.0" layoutY="491.0" rotate="-39.3" startX="-100.0" stroke="#50ff00" AnchorPane.rightAnchor="337.0" AnchorPane.topAnchor="460.0" />
-      <Label alignment="CENTER" layoutX="146.0" layoutY="343.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Eighth Final" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="146.0" layoutY="343.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Quaterfinal" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="577.0" layoutY="341.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Quarterfinal" textFill="#41ff00">
+      <Label alignment="CENTER" layoutX="577.0" layoutY="341.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Semi-Final" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
@@ -196,10 +193,16 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="986.0" layoutY="506.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Label" textFill="#41ff00">
+      <Label fx:id="lblChampion" alignment="CENTER" layoutX="986.0" layoutY="506.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Label" textFill="#41ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
+      <Line endX="55.0" layoutX="391.0" layoutY="188.0" rotate="90.0" startX="-100.0" stroke="#4dff00" AnchorPane.bottomAnchor="522.0" AnchorPane.rightAnchor="750.0" />
+      <Line endX="-30.0" layoutX="419.0" layoutY="205.0" startX="-100.0" stroke="#46ff00" AnchorPane.rightAnchor="756.0" AnchorPane.topAnchor="198.0" />
+      <Line endX="20.0" layoutX="441.0" layoutY="285.0" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="265.5" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="829.0" />
+      <Line endX="20.0" layoutX="441.0" layoutY="455.0" startX="-100.0" stroke="#50ff00" AnchorPane.bottomAnchor="111.5" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="829.0" />
+      <Line endX="55.0" layoutX="485.0" layoutY="208.0" rotate="90.0" startX="-100.0" stroke="#4dff00" AnchorPane.bottomAnchor="188.0" AnchorPane.rightAnchor="750.0" />
+      <Line endX="-30.0" layoutX="564.0" layoutY="215.0" startX="-100.0" stroke="#46ff00" AnchorPane.bottomAnchor="188.0" AnchorPane.rightAnchor="757.0" />
    </children>
 </AnchorPane>

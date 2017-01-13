@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myChamp.GUI.Controller.EditMatchDetailsController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Images/background5.png" />
          </image>
       </ImageView>
-      <Label layoutX="85.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="Label" textFill="#1eff00" AnchorPane.leftAnchor="80.0">
+      <Label fx:id="lblHomeTeam" layoutX="85.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="Label" textFill="#1eff00" AnchorPane.leftAnchor="80.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="445.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="Label" textFill="#1eff00" AnchorPane.rightAnchor="80.0">
+      <Label fx:id="lblGuestTeam" layoutX="445.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="Label" textFill="#1eff00" AnchorPane.rightAnchor="80.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -32,19 +33,19 @@
       </Label>
       <RadioButton layoutX="95.0" layoutY="160.0" mnemonicParsing="false" />
       <RadioButton layoutX="479.0" layoutY="160.0" mnemonicParsing="false" />
-      <Label layoutX="238.0" layoutY="152.0" style="-fx-border-color: green; -fx-background-color: black;" text="&lt;-Winer-&gt;" textFill="#1eff00">
+      <Label layoutX="231.0" layoutY="150.0" style="-fx-border-color: green; -fx-background-color: black;" text="&lt;-Winner-&gt;" textFill="#1eff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="81.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
-      <TextField layoutX="465.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
+      <TextField fx:id="txtHomeGoals" layoutX="81.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
+      <TextField fx:id="txtGuestGoals" layoutX="465.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
       <Label layoutX="241.0" layoutY="245.0" style="-fx-border-color: green; -fx-background-color: black;" text="&lt;-Goals-&gt;" textFill="#1eff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="256.0" layoutY="312.0" mnemonicParsing="false" stylesheets="@../../../tableView.css" text="Save" textFill="#1eff00">
+      <Button fx:id="btnSave" layoutX="256.0" layoutY="312.0" mnemonicParsing="false" onAction="#pressedBtnSave" stylesheets="@../../../tableView.css" text="Save" textFill="#1eff00">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>

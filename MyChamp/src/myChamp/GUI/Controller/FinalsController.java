@@ -7,14 +7,47 @@ package myChamp.GUI.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
- * @author Kristof
+ * @author Desmoswal
  */
 public class FinalsController implements Initializable {
+
+    @FXML
+    private Label lblWinnerA;
+    @FXML
+    private Label lblSecondB;
+    @FXML
+    private Label lblWinnerB;
+    @FXML
+    private Label lblSecondA;
+    @FXML
+    private Label lblWinnerC;
+    @FXML
+    private Label lblSecondD;
+    @FXML
+    private Label lblWinnerD;
+    @FXML
+    private Label lblSecondC;
+    @FXML
+    private Label lblWinnerQ1;
+    @FXML
+    private Label lblWinnerQ2;
+    @FXML
+    private Label lblWinnerQ3;
+    @FXML
+    private Label lblWinnerQ4;
+    @FXML
+    private Label lblWinnerSemi1;
+    @FXML
+    private Label lblWinnerSemi2;
+    @FXML
+    private Label lblChampion;
 
     /**
      * Initializes the controller class.

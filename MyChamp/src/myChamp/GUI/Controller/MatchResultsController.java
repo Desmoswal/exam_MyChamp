@@ -5,12 +5,18 @@
  */
 package myChamp.GUI.Controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -37,19 +43,75 @@ public class MatchResultsController implements Initializable {
     }    
 
     @FXML
-    private void pressedGroupA(ActionEvent event) {
+    private void pressedGroupA(ActionEvent event) throws IOException 
+    {
+        Stage primStage = (Stage)btnResultsGroupA.getScene().getWindow(); //getting the primary stage from any object of the fxml
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
+        Parent root = loader.load(); //load the fxml from the URL
+
+        loader.getController(); //get he controller of the loaded fxml
+        
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
+        
+        stageView.show();
     }
 
     @FXML
-    private void pressedGroupB(ActionEvent event) {
+    private void pressedGroupB(ActionEvent event) throws IOException 
+    {
+        Stage primStage = (Stage)btnResultsGroupB.getScene().getWindow(); //getting the primary stage from any object of the fxml
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
+        Parent root = loader.load(); //load the fxml from the URL
+
+        loader.getController(); //get he controller of the loaded fxml
+        
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
+        
+        stageView.show();
     }
 
     @FXML
-    private void pressedGroupC(ActionEvent event) {
+    private void pressedGroupC(ActionEvent event) throws IOException 
+    {
+        Stage primStage = (Stage)btnResultsGroupC.getScene().getWindow(); //getting the primary stage from any object of the fxml
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
+        Parent root = loader.load(); //load the fxml from the URL
+
+        loader.getController(); //get he controller of the loaded fxml
+        
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
+        
+        stageView.show();
     }
 
     @FXML
-    private void pressedGroupD(ActionEvent event) {
+    private void pressedGroupD(ActionEvent event) throws IOException 
+    {
+        Stage primStage = (Stage)btnResultsGroupD.getScene().getWindow(); //getting the primary stage from any object of the fxml
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/MatchGroupRounds.fxml"));
+        Parent root = loader.load(); //load the fxml from the URL
+
+        loader.getController(); //get he controller of the loaded fxml
+        
+        Stage stageView = new Stage();
+        stageView.setScene(new Scene(root));
+
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.initOwner(primStage);
+        
+        stageView.show();
     }
     
 }
