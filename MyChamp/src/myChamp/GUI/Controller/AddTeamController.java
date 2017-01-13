@@ -70,7 +70,7 @@ public class AddTeamController implements Initializable {
         
     }
     
-    @FXML
+    @FXML //adds team to the Teams object and saves it to te textfile
     private void pressedAddButton(ActionEvent event) {
        if(!addTeamName.getText().isEmpty()) {
             model.addNewTeam(addTeamName.getText());
@@ -86,21 +86,7 @@ public class AddTeamController implements Initializable {
         }
     }
     
-    /*private void pressedSaveButton(ActionEvent event) throws IOException {
-        //OpenNewWindow.openWindowInParent(mainPane, getClass().getResource("/myChamp/GUI/View/FXMLDocument.fxml"));
-        Stage primStage = (Stage)addTeamName.getScene().getWindow(); //getting the primary stage from any object of the fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/myChamp/GUI/View/GroupView.fxml"));
-        Parent root = loader.load(); //load the fxml from the URL
-
-        loader.getController(); //get he controller of the loaded fxml
-
-        // this is a popup, we will create a new window for it
-        primStage.setScene(new Scene(root));
-        
-        primStage.show();
-    }*/
-    
-    @FXML
+    @FXML //removes team from the Teams object and saves modifications to file
     private void pressedRemoveButton(ActionEvent event) {
         Team selected = addTeamTable.getSelectionModel().getSelectedItem();
         model.removeTeam(selected);

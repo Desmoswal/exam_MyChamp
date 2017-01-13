@@ -23,7 +23,7 @@ import myChamp.GUI.Model.MyChampModel;
 
 /**
  * FXML Controller class
- *
+ * This is just a little window to choose which group's results you want to see.
  * @author Kristof
  */
 public class MatchResultsController implements Initializable {

@@ -220,7 +220,7 @@ public class SchedulesController implements Initializable
         }
     }
     
-    @FXML
+    @FXML //only for debugging purposes
     private void pressedTableDebug(MouseEvent event) {
         System.out.println("source: "+event.getSource());
         System.out.println("target: "+event.getTarget());
@@ -229,6 +229,7 @@ public class SchedulesController implements Initializable
         System.out.println(model.getMatches());
     }
     
+    /** The magic hardcore to create matches (for 4 teams each group) */
     private void createMatchesFor4Teams(Group group) {
             //round 1
             model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(1),group,1,0));
@@ -256,6 +257,7 @@ public class SchedulesController implements Initializable
             model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(1),group,6,0));
     }
     
+    /** The magic hardcore to create matches (for 3 teams each group) */
     private void createMatchesFor3Teams(Group group) {
         //round 1
         model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(1),group,1,0));

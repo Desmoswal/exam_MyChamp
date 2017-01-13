@@ -99,6 +99,8 @@ public class MatchGroupRoundsController implements Initializable
     private TableColumn<Match, Integer> colGuestGoalsRound3;
     
     MyChampModel model = new MyChampModel();
+    
+    //as we don't have Round objects and built the whole program without them, we had to do this...
     private List<Match> r1matches = new ArrayList<>();
     private List<Match> r2matches = new ArrayList<>();
     private List<Match> r3matches = new ArrayList<>();
@@ -115,6 +117,7 @@ public class MatchGroupRoundsController implements Initializable
        setTableProperties();
     }    
     
+    /** Adds all matches to each round. Match has data of the round it belongs to */
     public void setRounds(Group groupGiven, List<Match> matchlist) {
         for (Match match : matchlist) {
             if(match.getGroup().getUuid().equals(groupGiven.getUuid())) {
@@ -168,6 +171,7 @@ public class MatchGroupRoundsController implements Initializable
         }
     }
     
+    /** Sets all table items and refreshes all tables. They won't change without refresh OR without setItems we don't know why. */
     public void setTableItems() {
         tblRound1.setItems(FXCollections.observableArrayList(r1matches));
         tblRound2.setItems(FXCollections.observableArrayList(r2matches));
@@ -184,6 +188,7 @@ public class MatchGroupRoundsController implements Initializable
         
     }
     
+    /** Sets all the tables' properties */
     public void setTableProperties() {
        colHomeTeamRound1.setCellValueFactory(new PropertyValueFactory("homeTeamName"));
        colHomeGoalsRound1.setCellValueFactory(new PropertyValueFactory("homeTeamGoals"));
@@ -212,6 +217,9 @@ public class MatchGroupRoundsController implements Initializable
        /*YEEES IT'S DONE!!*/
     }
     
+    /** Our ultimate saving method for all the teams and all the matches stats.
+     * This rebuilds the whole singleton libraries from each round lists
+     */
     public void saveToFile() {
         /*
         THE ULTIMATE WAY TO SAVE TEAMS AND THEIR POINTS

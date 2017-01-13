@@ -76,6 +76,7 @@ public class GroupViewController implements Initializable {
             setTeamTableItems();
         }
         
+        //checks if all teams has an assigned group yet
         for (Team team : model.getTeamsFromFile()) {
             if((team.getGroup().equals("a")) || (team.getGroup().equals("b")) || (team.getGroup().equals("c")) || (team.getGroup().equals("d"))) {
                 teamsHasGroups = true;
@@ -95,7 +96,7 @@ public class GroupViewController implements Initializable {
         
     }    
 
-    @FXML
+    @FXML //assign button
     private void pressedBtnGroup(ActionEvent event) {
         if(!teamsHasGroups) {
             assignGroups(model.getTeams(),model.getGroups());
@@ -163,7 +164,7 @@ public class GroupViewController implements Initializable {
     }
     
     /**
-     * Sets table colmn properies for a specified group's table
+     * Sets table column properies for a specified group's table
      * @param group 
      */
     private void setTableProperties(Group group) {
@@ -218,7 +219,7 @@ public class GroupViewController implements Initializable {
         tblTeams.setItems(FXCollections.observableArrayList(model.getTeams()));
     }
     
-    @FXML
+    @FXML //only for debugging purposes
     private void pressedTableDebug(MouseEvent event) {
         System.out.println("source: "+event.getSource());
         System.out.println("target: "+event.getTarget());

@@ -16,7 +16,7 @@ import myChamp.BLL.Manager;
 import myChamp.BLL.SaveManager;
 
 /**
- *
+ * 
  * @author Desmoswal
  */
 public class MyChampModel

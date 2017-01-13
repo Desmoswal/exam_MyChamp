@@ -21,7 +21,7 @@ import myChamp.GUI.Model.MyChampModel;
 /**
  * FXML Controller class
  *
- * @author Kristof
+ * @author Desmoswal
  */
 public class RankingListController implements Initializable {
 

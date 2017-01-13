@@ -59,10 +59,12 @@ public class MainMenuController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        //create all singleton instances just to be safe
         Groups.getInstance();
         Teams.getInstance();
         Matches.getInstance();
         
+        //load data back from files if any
         if(!model.getTeamsFromFile().isEmpty()) {
             model.getTeams().addAll(model.getTeamsFromFile());
         }
@@ -70,6 +72,7 @@ public class MainMenuController implements Initializable
         if(!model.getGroupsFromFile().isEmpty()) {
             model.getGroups().addAll(model.getGroupsFromFile());
         }
+        
         if(!model.getMatchesFromFile().isEmpty()) {
             model.getMatches().addAll(model.getMatchesFromFile());
         }

@@ -20,7 +20,7 @@ public class TextFileHandler extends FileManager
 {
     
     /**
-     * Saves every team in Teams
+     * Saves every team in Teams to a textfile
      * @param teamList 
      */
     @Override
@@ -44,7 +44,7 @@ public class TextFileHandler extends FileManager
     }
     
     /**
-     * Reads every line from Team library
+     * Reads every line from Team library text file
      * @return 
      */
     @Override

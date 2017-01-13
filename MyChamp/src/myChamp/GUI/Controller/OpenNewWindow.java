@@ -17,7 +17,8 @@ import javafx.stage.Stage;
 import javax.print.DocFlavor;
 
 /**
- *
+ * Wanted to use but it's impossible (yet) to pass methods to the controllers with and other method.
+ * Let it here to be able to copy these codes.
  * @author Kristof
  */
 public abstract class OpenNewWindow {

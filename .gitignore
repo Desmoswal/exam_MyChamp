@@ -14,7 +14,7 @@ hs_err_pid*
 
 #netbeans specific
 core
-nbproject/*
+#nbproject/*
 !nbproject/project.properties
 !nbproject/project.xml
 

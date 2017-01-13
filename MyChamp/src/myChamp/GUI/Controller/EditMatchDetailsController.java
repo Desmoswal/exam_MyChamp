@@ -71,6 +71,7 @@ public class EditMatchDetailsController implements Initializable
         stage.close();
     }
     
+    /** Sets new stats in the selected match */
     public void setSelectedMatch(Match selected) {
         this.selected = selected;
         
@@ -81,6 +82,7 @@ public class EditMatchDetailsController implements Initializable
         txtGuestGoals.setText(""+selected.getGuestTeamGoals());
     }
     
+    /** Saves new stats in the selected match and in the matchs' teams */
     private void saveSelectedMatch() {
         if(toggleWinner.getSelectedToggle() != null) {
             if(toggleWinner.getSelectedToggle().equals(rbHomeTeam)) {
@@ -99,6 +101,7 @@ public class EditMatchDetailsController implements Initializable
         selected.getGuestTeam().setGoals(selected.getGuestTeam().getGoals()+Integer.parseInt(txtGuestGoals.getText()));
     }
     
+    /** Sets parent window's controller to be able to save stats */
     public void setController(MatchGroupRoundsController con) {
         modalController = con;
     }
