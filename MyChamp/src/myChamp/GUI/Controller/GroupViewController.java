@@ -7,6 +7,8 @@ package myChamp.GUI.Controller;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -118,8 +120,30 @@ public class GroupViewController implements Initializable {
      * @param grouplist 
      */
     private void assignGroups(List<Team> teamlist, List<Group> grouplist) {
-        int i = 0;
+        Collections.shuffle(teamlist);
         
+        for (Group group : grouplist) {
+            group.getTeams().clear();
+        }
+        
+        for (int i = 0; i < teamlist.size(); ) {
+            for (Group group : grouplist) {
+                if(!group.getTeams().contains(teamlist.get(i))) {
+                    group.getTeams().add(teamlist.get(i));
+                    teamlist.get(i).setGroup(group.getName());
+                    i++;
+                }
+                if(i >= teamlist.size()) break;
+            }
+        }
+        
+        /**
+         * 
+         * 
+         *
+        */
+        /*
+        int i = 0;
         while(i < teamlist.size()) {
             for (int y = 0 ; y < grouplist.size() ; ) {
                
@@ -133,7 +157,7 @@ public class GroupViewController implements Initializable {
                     i++;
                 }               
             }
-        }
+        }*/
         model.saveTeams(teamlist);
         model.saveGroups(grouplist);
     }
