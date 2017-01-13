@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,41 +17,44 @@
             <Image url="@../../../../Images/background5.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblHomeTeam" layoutX="85.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="Label" textFill="#1eff00" AnchorPane.leftAnchor="80.0">
+      <Label fx:id="lblHomeTeam" layoutX="104.0" layoutY="68.0" style="-fx-border-color: #1eff00; -fx-border-width: 3;" text="Label" textFill="#1eff00" AnchorPane.leftAnchor="104.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblGuestTeam" layoutX="445.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="Label" textFill="#1eff00" AnchorPane.rightAnchor="80.0">
+      <Label fx:id="lblGuestTeam" layoutX="435.0" layoutY="68.0" style="-fx-border-color: #1eff00; -fx-border-width: 3;" text="Label" textFill="#1eff00" AnchorPane.rightAnchor="104.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="235.0" layoutY="68.0" style="-fx-border-color: green; -fx-background-color: black;" text="&lt;-Versus-&gt;" textFill="#1eff00">
+      <Label layoutX="260.0" layoutY="68.0" style="-fx-border-color: #1eff00; -fx-border-width: 3;" text="Versus" textFill="#1eff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <RadioButton layoutX="95.0" layoutY="160.0" mnemonicParsing="false" />
-      <RadioButton layoutX="479.0" layoutY="160.0" mnemonicParsing="false" />
-      <Label layoutX="231.0" layoutY="150.0" style="-fx-border-color: green; -fx-background-color: black;" text="&lt;-Winner-&gt;" textFill="#1eff00">
+      <RadioButton layoutX="124.0" layoutY="160.0" mnemonicParsing="false">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleWinner" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="460.0" layoutY="160.0" mnemonicParsing="false" toggleGroup="$toggleWinner" />
+      <Label layoutX="256.0" layoutY="148.0" style="-fx-border-color: #1eff00; -fx-border-width: 3;" text="Winner" textFill="#1eff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="txtHomeGoals" layoutX="81.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
-      <TextField fx:id="txtGuestGoals" layoutX="465.0" layoutY="240.0" prefHeight="46.0" prefWidth="56.0" />
-      <Label layoutX="241.0" layoutY="245.0" style="-fx-border-color: green; -fx-background-color: black;" text="&lt;-Goals-&gt;" textFill="#1eff00">
+      <TextField fx:id="txtHomeGoals" layoutX="109.0" layoutY="243.0" prefHeight="46.0" prefWidth="56.0" />
+      <TextField fx:id="txtGuestGoals" layoutX="445.0" layoutY="243.0" prefHeight="46.0" prefWidth="56.0" />
+      <Label layoutX="266.0" layoutY="246.0" style="-fx-border-color: #1eff00; -fx-border-width: 3;" text="Goals" textFill="#1eff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnSave" layoutX="256.0" layoutY="312.0" mnemonicParsing="false" onAction="#pressedBtnSave" stylesheets="@../../../tableView.css" text="Save" textFill="#1eff00">
+      <Button fx:id="btnSave" layoutX="255.0" layoutY="322.0" mnemonicParsing="false" onAction="#pressedBtnSave" stylesheets="@../../../tableView.css" text="Save" textFill="#1eff00">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="222.0" layoutY="14.0" style="-fx-border-color: green; -fx-background-color: black;" text="Match Details" textFill="#0dff00">
+      <Label layoutX="220.0" layoutY="14.0" style="-fx-border-color: #1eff00; -fx-border-width: 3;" text="Match Details" textFill="#0dff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

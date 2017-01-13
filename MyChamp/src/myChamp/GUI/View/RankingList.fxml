@@ -15,17 +15,17 @@
             <Image url="@../../../../Images/background3.png" />
          </image>
       </ImageView>
-      <Label layoutX="133.0" layoutY="33.0" text="Group A" textFill="#48ff00" AnchorPane.leftAnchor="133.0">
+      <Label layoutX="121.0" layoutY="31.0" text="Group A" textFill="#48ff00" AnchorPane.leftAnchor="121.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="435.0" layoutY="30.0" text="Group B" textFill="#48ff00">
+      <Label layoutX="436.0" layoutY="31.0" text="Group B" textFill="#48ff00">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="132.0" layoutY="385.0" text="Group C" textFill="#48ff00">
+      <Label layoutX="122.0" layoutY="385.0" text="Group C" textFill="#48ff00">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -35,31 +35,31 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="tblGroupA" layoutX="54.0" layoutY="78.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="54.0">
+      <TableView fx:id="tblGroupA" layoutX="54.0" layoutY="78.0" prefHeight="285.0" prefWidth="270.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="33.0">
         <columns>
-          <TableColumn fx:id="colTeamsGroupA" prefWidth="165.0" text="Teams" />
+          <TableColumn fx:id="colTeamsGroupA" prefWidth="200.0" text="Teams" />
           <TableColumn fx:id="colPointsGroupA" prefWidth="72.0" text="Points" />
         </columns>
       </TableView>
-      <TableView fx:id="tblGroupC" layoutX="53.0" layoutY="432.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="54.0">
+      <TableView fx:id="tblGroupC" layoutX="53.0" layoutY="432.0" prefHeight="285.0" prefWidth="270.0" stylesheets="@../../../tableView.css" AnchorPane.leftAnchor="33.0">
          <columns>
-            <TableColumn fx:id="colTeamsGroupC" prefWidth="165.0" text="Teams" />
+            <TableColumn fx:id="colTeamsGroupC" prefWidth="200.0" text="Teams" />
             <TableColumn fx:id="colPointsGroupC" prefWidth="72.0" text="Points" />
          </columns>
       </TableView>
-      <TableView fx:id="tblGroupD" layoutX="356.0" layoutY="432.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="54.0">
+      <TableView fx:id="tblGroupD" layoutX="356.0" layoutY="432.0" prefHeight="285.0" prefWidth="270.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="33.0">
          <columns>
-            <TableColumn fx:id="colTeamsGroupD" prefWidth="162.0" text="Teams" />
+            <TableColumn fx:id="colTeamsGroupD" prefWidth="200.0" text="Teams" />
             <TableColumn fx:id="colPointsGroupD" prefWidth="73.0" text="Points" />
          </columns>
       </TableView>
-      <TableView fx:id="tblGroupB" layoutX="356.0" layoutY="78.0" prefHeight="285.0" prefWidth="236.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="54.0">
+      <TableView fx:id="tblGroupB" layoutX="356.0" layoutY="78.0" prefHeight="285.0" prefWidth="270.0" stylesheets="@../../../tableView.css" AnchorPane.rightAnchor="33.0">
          <columns>
-            <TableColumn fx:id="colTeamsGroupB" prefWidth="163.0" text="Teams" />
+            <TableColumn fx:id="colTeamsGroupB" prefWidth="200.0" text="Teams" />
             <TableColumn fx:id="colPointsGroupB" prefWidth="72.0" text="Points" />
          </columns>
       </TableView>
-      <Label layoutX="277.0" layoutY="13.0" text="Rankings" textFill="#41ff00" AnchorPane.topAnchor="13.0">
+      <Label layoutX="273.0" layoutY="14.0" text="Rankings" textFill="#41ff00" AnchorPane.topAnchor="14.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
