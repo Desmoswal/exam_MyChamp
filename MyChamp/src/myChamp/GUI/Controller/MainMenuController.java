@@ -70,6 +70,9 @@ public class MainMenuController implements Initializable
         if(!model.getGroupsFromFile().isEmpty()) {
             model.getGroups().addAll(model.getGroupsFromFile());
         }
+        if(!model.getMatchesFromFile().isEmpty()) {
+            model.getMatches().addAll(model.getMatchesFromFile());
+        }
         
     }    
     

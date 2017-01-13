@@ -93,7 +93,12 @@ public class SchedulesController implements Initializable
                 }
             }
         }*/
-        for(int i = 0; i<4;i++) {
+        
+       /**
+        * this was our ultimate randomizer code to create matches (incorrectly) but then we got to know that we could have hardcoded it all. so we did.
+        * btw we were looking for an algorithm to run through all assigns but we could not find it
+        */
+       /*for(int i = 0; i<4;i++) {
             for (Group group : model.getGroups()) {
                 Random rand = new Random();
                 Random rand2 = new Random();
@@ -120,6 +125,12 @@ public class SchedulesController implements Initializable
                     temp = (ArrayList<Match>) model.getMatches();
                 }
             }
+        }*/
+       
+        if(model.getMatches().isEmpty()) {
+            for(Group group : model.getGroups()) {
+                createMatches(group);
+            }
         }
         model.saveMatches(model.getMatches());
         
@@ -129,7 +140,7 @@ public class SchedulesController implements Initializable
             setTableItems(group);
         }
         
-        model.getMatchesFromFile();
+        //model.getMatchesFromFile();
     }
     
     /**
@@ -210,5 +221,32 @@ public class SchedulesController implements Initializable
         System.out.println(colGroupAHomeTeam.getCellValueFactory());
         System.out.println(colGroupAHomeTeam.getCellData(tblGroupA.getSelectionModel().getSelectedItem()));
         System.out.println(model.getMatches());
+    }
+    
+    private void createMatches(Group group) {
+            //round 1
+            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(1),group,1));
+            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(3),group,1));
+            
+            //round 2
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(2),group,2));
+            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(3),group,2));
+            
+            //round 3
+            model.getMatches().add(new Match(group.getTeams().get(0),group.getTeams().get(2),group,3));
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(3),group,3));
+            
+            //reverse
+            //round 4
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(0),group,4));
+            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(2),group,4));
+            
+            //round 5
+            model.getMatches().add(new Match(group.getTeams().get(2),group.getTeams().get(1),group,5));
+            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(0),group,5));
+            
+            //round 6
+            model.getMatches().add(new Match(group.getTeams().get(1),group.getTeams().get(0),group,6));
+            model.getMatches().add(new Match(group.getTeams().get(3),group.getTeams().get(1),group,6));
     }
 }
